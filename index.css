@@ -1,0 +1,33 @@
+body {
+    background-image: url("france_flag.jpg");
+    background-repeat: repeat-y;
+}
+
+#main_title {
+    text-align:center;
+}
+
+#title_div {
+    position:absolute;
+    left:50%;
+    transform:translate(-50%, 0);
+    width:100%;
+    height:auto;
+    background-color:white;
+}
+
+#polit_card {
+    margin-top:50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:darkblue;
+    width:50%;
+    height:auto;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+}
