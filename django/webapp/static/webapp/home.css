@@ -9,7 +9,7 @@ body {
     border-radius:2px;
     width:80%;
     height:auto;
-    position:relative;
+    position:absolute;
     top:5%;
     left:50%;
     transform:translate(-50%, -50%);
@@ -27,8 +27,8 @@ body {
     border-radius:2px;
     width:60%;
     height:70%;
-    position:relative;
-    top:20%;
+    position:absolute;
+    top:80%;
     left:50%;
     transform:translate(-50%, -50%);
 }
