@@ -1,14 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <link rel="stylesheet" href="{% static 'webapp/home.css'}">
-        <title>Smash or Pass (The Bill) - Edition Assemblée Nationale</title>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <title>Smash or Pass (The Bill) - Edition Assemblée Nationale</title>
+    <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'marianne.ico' %}">
     </head>
     <body>
-        <div style="background-color:red;">
-            <h1>Hello Paloumet !</h1>
+        <div id="main-title-div">
+            <h1 id="main-title-h">SMASH or PASS (THE BILL) - Edition Assemblée Nationale</h1>
+        </div>
+        <div id="info-box">
+            <h1 id="inf-fullname"></h1>
+            <h3 id="inf-age"></h3>
+            <h3 id="inf-circon"></h3>
+            <h3 id="inf-party"></h3>
+            <img src="{% static 'panot.jpg' %}">
         </div>
     </body>
 </html>
