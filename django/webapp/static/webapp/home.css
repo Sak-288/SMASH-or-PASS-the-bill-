@@ -1,5 +1,5 @@
 body {
-    background-image:url('france.png');
+    background-image:url('../webapp/france.png');
     background:repeat-y;
     position:relative;
 }
