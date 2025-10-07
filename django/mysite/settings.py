@@ -16,7 +16,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [BASE_DIR / "webapp" / "static"]
+STATICFILES_DIRS = [ BASE_DIR / "webapp" / "static" ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (uploads)
@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -1,5 +1,5 @@
 body {
-    background-image:url('../webapp/france.png');
+    background-image:url('webapp/france.png');
     background:repeat-y;
     position:relative;
 }
@@ -10,9 +10,8 @@ body {
     width:80%;
     height:auto;
     position:absolute;
-    top:5%;
+    top:10%;
     left:50%;
-    transform:translate(-50%, -50%);
 }
 
 #main-title-h {
