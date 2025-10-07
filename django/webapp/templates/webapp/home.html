@@ -1,25 +1,98 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Smash or Pass (The Bill) - Edition Assemblée Nationale</title>
-    <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'webapp/marianne.ico' %}">
-    </head>
-    <body>
-        <div id="main-title-div">
-            <h1 id="main-title-h">SMASH or PASS (THE BILL) - Edition Assemblée Nationale</h1>
-        </div>
-        <div id="info-box">
-            <h1 id="inf-fullname"></h1>
-            <h3 id="inf-age"></h3>
-            <h3 id="inf-circon"></h3>
-            <h3 id="inf-party"></h3>
-            <img src="{% static 'webapp/panot.jpg' %}">
-        </div>
-    </body>
+</head>
+<body style='
+    background-image: url("{% static "webapp/france.png" %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+'>
+    <!-- Main Title -->
+    <div id="main-title-div" style="
+        background-color: white;
+        border-radius: 2px;
+        width: 80%;
+        height: 50px;
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
+        <h1 id="main-title-h" style="
+            text-decoration: underline;
+            white-space: nowrap;
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0;
+        ">
+            SMASH or PASS (THE BILL) - Edition Assemblée Nationale
+        </h1>
+    </div>
+
+    <div id="info-box" style="
+    background-color: white;
+    border-radius: 2px;
+    width: 80%;
+    height:500px;
+    max-width: 1200px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;           /* enable flex layout */
+    justify-content: space-around; /* spread contestants evenly */
+    align-items: flex-start; /* align at top */
+    gap: 20px;               /* optional space between contestants */
+">
+    <div id="contestant1" style="text-align: center;">
+        <h1 style="color:darkblue;">{{firstInf.name}} {{firstInf.surname}}</h1>
+
+        <h3>
+            <mark style="background-color:black;color:white;">
+                {{firstInf.num}}° Circonscription du Départment [{{firstInf.department}}]
+            </mark>
+        </h3>
+
+        <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">
+            {{firstInf.party}}
+        </h3>
+        <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+    </div>
+
+    <div id="barre" style="width:2px;height:100%;background-color:black;">
+    </div>
+
+    <div id="contestant2" style="text-align: center;">
+        <h1 style="color:darkblue;">{{secondInf.name}} {{secondInf.surname}}</h1>
+
+        <h3>
+            <mark style="background-color:black;color:white;">
+                {{secondInf.num}}° Circonscription du Départment [{{secondInf.department}}]
+            </mark>
+        </h3>
+
+        <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">
+            {{secondInf.party}}
+        </h3>
+        <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+    </div>
+</body>
 </html>
