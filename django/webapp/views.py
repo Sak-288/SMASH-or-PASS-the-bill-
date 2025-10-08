@@ -13,8 +13,9 @@ def home(request):
     import random as rp
     import csv
 
-    firstRank = rp.randint(1, 577)
-    secondRank = rp.randint(1, 577)
+    firstRank = rp.randint(1, 575)
+    secondRank = rp.choice([i for i in range(1, 575 + 1) if i != firstRank])
+
 
     with open(csv_file_path, mode='r', newline='', encoding="utf-8") as file:
         content = list(csv.reader(file))
@@ -47,7 +48,7 @@ def home(request):
             firstColor = "#990000"  # Bordeaux / Rouge foncé
         case "Libertés, Indépendants, Outre-mer et Territoires":
             firstColor = "#66CCCC"  # Bleu turquoise
-        case "Non inscrit":
+        case "Non inscrit(e)":
             firstColor = "#808080"  # Gris
         case "Gauche Démocrate et Républicaine":
             firstColor = "#800080"  # Violet
@@ -75,7 +76,7 @@ def home(request):
             secondColor = "#990000"  # Bordeaux / Rouge foncé
         case "Libertés, Indépendants, Outre-mer et Territoires":
             secondColor = "#66CCCC"  # Bleu turquoise
-        case "Non inscrit":
+        case "Non inscrit(e)":
             secondColor = "#808080"  # Gris
         case "Gauche Démocrate et Républicaine":
             secondColor = "#800080"  # Violet

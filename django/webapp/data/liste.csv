@@ -1,4 +1,3 @@
-identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique (complet)
 795228,Nadège,Abomangoli,Seine-Saint-Denis,10,La France insoumise - Nouveau Front Populaire
 794278,Xavier,Albertini,Marne,1,Horizons & Indépendants
 793262,Laurent,Alexandre,Aveyron,2,La France insoumise - Nouveau Front Populaire
@@ -55,7 +54,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 841645,Théo,Bernhardt,Bas-Rhin,8,Rassemblement National
 687214,Sylvain,Berrios,Val-de-Marne,1,Horizons & Indépendants
 719218,Hervé,Berville,Côtes-d'Armor,2,Ensemble pour la République
-309643,Véronique,Besse,Vendée,4,Non inscrit
+309643,Véronique,Besse,Vendée,4,Non inscrit(e)
 793772,Christophe,Bex,Haute-Garonne,7,La France insoumise - Nouveau Front Populaire
 842001,Guillaume,Bigot,Territoire de Belfort,2,Rassemblement National
 720822,Bruno,Bilde,Pas-de-Calais,12,Rassemblement National
@@ -69,7 +68,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 796042,Frédéric,Boccaletti,Var,7,Rassemblement National
 720162,Philippe,Bolo,Maine-et-Loire,7,Les Démocrates
 793444,Manuel,Bompard,Bouches-du-Rhône,4,La France insoumise - Nouveau Front Populaire
-569,Philippe,Bonnecarrère,Tarn,1,Non inscrit
+569,Philippe,Bonnecarrère,Tarn,1,Non inscrit(e)
 841507,Nicolas,Bonnet,Puy-de-Dôme,3,Écologiste et Social
 719968,Sylvie,Bonnet,Loire,4,Droite Républicaine
 841885,Arnaud,Bonnet,Seine-et-Marne,8,Écologiste et Social
@@ -177,13 +176,13 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 840135,Alexandre,Dufosset,Nord,18,Rassemblement National
 795200,Alma,Dufour,Seine-Maritime,4,La France insoumise - Nouveau Front Populaire
 841351,Emmanuel,Duplessy,Loiret,2,Écologiste et Social
-643175,Stella,Dupont,Maine-et-Loire,2,Non inscrit
+643175,Stella,Dupont,Maine-et-Loire,2,Non inscrit(e)
 842073,Gaëtan,Dussausaye,Vosges,2,Rassemblement National
 841761,Aurélien,Dutremble,Saône-et-Loire,3,Rassemblement National
 794854,Inaki,Echaniz,Pyrénées-Atlantiques,4,Socialistes et apparentés
-794718,Christine,Engrand,Pas-de-Calais,6,Non inscrit
+794718,Christine,Engrand,Pas-de-Calais,6,Non inscrit(e)
 795844,Karen,Erodi,Tarn,2,La France insoumise - Nouveau Front Populaire
-607193,Sophie,Errante,Loire-Atlantique,10,Non inscrit
+607193,Sophie,Errante,Loire-Atlantique,10,Non inscrit(e)
 842195,Romain,Eskenazi,Val-d'Oise,7,Socialistes et apparentés
 841621,Auguste,Evrard,Pas-de-Calais,8,Rassemblement National
 794658,Philippe,Fait,Pas-de-Calais,4,Horizons & Indépendants
@@ -236,7 +235,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 720560,Perrine,Goulet,Nièvre,1,Les Démocrates
 793592,Géraldine,Grangier,Doubs,4,Rassemblement National
 267318,Jean-Carles,Grelier,Sarthe,5,Les Démocrates
-795540,Daniel,Grenon,Yonne,1,Non inscrit
+795540,Daniel,Grenon,Yonne,1,Non inscrit(e)
 840757,Monique,Griseti,Bouches-du-Rhône,1,Rassemblement National
 794058,Justine,Gruet,Jura,3,Droite Républicaine
 840171,Emmanuel,Grégoire,Paris,7,Socialistes et apparentés
@@ -450,7 +449,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 720720,Josy,Poueyto,Pyrénées-Atlantiques,1,Les Démocrates
 795270,Marie-Agnès,Poussier-Winsback,Seine-Maritime,9,Horizons & Indépendants
 721916,Natalia,Pouzyreff,Yvelines,6,Ensemble pour la République
-720100,Aurélien,Pradié,Lot,1,Non inscrit
+720100,Aurélien,Pradié,Lot,1,Non inscrit(e)
 840955,Pierre,Pribetich,Côte-d'Or,3,Socialistes et apparentés
 841367,Christophe,Proença,Lot,2,Socialistes et apparentés
 719578,Loïc,Prud'homme,Gironde,3,La France insoumise - Nouveau Front Populaire
@@ -503,7 +502,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 774960,Isabelle,Santiago,Val-de-Marne,9,Socialistes et apparentés
 610002,Eva,Sas,Paris,8,Écologiste et Social
 340343,Hervé,Saulignac,Ardèche,1,Socialistes et apparentés
-721314,Raphaël,Schellenberger,Haut-Rhin,4,Non inscrit
+721314,Raphaël,Schellenberger,Haut-Rhin,4,Non inscrit(e)
 796050,Philippe,Schreck,Var,8,Rassemblement National
 795808,Sabrina,Sebaihi,Hauts-de-Seine,4,Écologiste et Social
 757225,Mikaele,Seo,Wallis-et-Futuna,1,Ensemble pour la République
@@ -561,7 +560,7 @@ identifiant,Prénom,Nom,Département,Numéro de circonscription,Groupe politique
 721474,Stéphane,Viry,Vosges,1,"Libertés, Indépendants, Outre-mer et Territoires"
 841575,Frédéric-Pierre,Vos,Oise,5,Rassemblement National
 2940,Dominique,Voynet,Doubs,2,Écologiste et Social
-793194,Lionel,Vuibert,Ardennes,1,Non inscrit
+793194,Lionel,Vuibert,Ardennes,1,Non inscrit(e)
 2952,Jean-Luc,Warsmann,Ardennes,3,"Libertés, Indépendants, Outre-mer et Territoires"
 267285,Laurent,Wauquiez,Haute-Loire,1,Droite Républicaine
 841479,Frédéric,Weber,Meurthe-et-Moselle,3,Rassemblement National
