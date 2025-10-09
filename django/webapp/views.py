@@ -2,7 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from pathlib import Path
 from types import SimpleNamespace
+from django.shortcuts import redirect
 
+def update_value(request):
+    if request.method == "POST":
+        item_id = request.POST.get("item_id")
+        # Then redirect back (optional)
+        return redirect(request.META.get('HTTP_REFERER', '/'))
 
 # get the app's base path
 BASE_DIR = Path(__file__).resolve().parent  # points to webapp/
@@ -13,8 +19,8 @@ def home(request):
     import random as rp
     import csv
 
-    firstRank = rp.randint(1, 575)
-    secondRank = rp.choice([i for i in range(1, 575 + 1) if i != firstRank])
+    firstRank = rp.randint(1, 574)
+    secondRank = rp.choice([i for i in range(1, 574 + 1) if i != firstRank])
 
 
     with open(csv_file_path, mode='r', newline='', encoding="utf-8") as file:
@@ -29,15 +35,15 @@ def home(request):
 
     match firstParty:
         case "La France insoumise - Nouveau Front Populaire":
-            firstColor = "#E41B17"  # Rouge vif
+            firstColor = "#FF0000"  # Rouge vif
         case "Horizons & Indépendants":
             firstColor = "#0066CC"  # Bleu clair
         case "Union des droites pour la République":
-            firstColor = "#003366"  # Bleu foncé
+            firstColor = "#004991"  # Bleu foncé
         case "Socialistes et apparentés":
             firstColor = "#FF3366"  # Rose / Rouge clair
         case "Rassemblement National":
-            firstColor = "#0055A4"  # Bleu marine
+            firstColor = "#00203E"  # Bleu marine
         case "Ensemble pour la République":
             firstColor = "#FFD700"  # Or / Jaune
         case "Écologiste et Social":
@@ -45,9 +51,9 @@ def home(request):
         case "Les Démocrates":
             firstColor = "#FF6600"  # Orange
         case "Droite Républicaine":
-            firstColor = "#990000"  # Bordeaux / Rouge foncé
+            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
         case "Libertés, Indépendants, Outre-mer et Territoires":
-            firstColor = "#66CCCC"  # Bleu turquoise
+            firstColor = "#00E1FF"  # Bleu turquoise
         case "Non inscrit(e)":
             firstColor = "#808080"  # Gris
         case "Gauche Démocrate et Républicaine":
@@ -57,15 +63,15 @@ def home(request):
 
     match secondParty:
         case "La France insoumise - Nouveau Front Populaire":
-            secondColor = "#E41B17"  # Rouge vif
+            secondColor = "#FF0000"  # Rouge vif
         case "Horizons & Indépendants":
             secondColor = "#0066CC"  # Bleu clair
         case "Union des droites pour la République":
-            secondColor = "#003366"  # Bleu foncé
+            secondColor = "#004991"  # Bleu foncé
         case "Socialistes et apparentés":
             secondColor = "#FF3366"  # Rose / Rouge clair
         case "Rassemblement National":
-            secondColor = "#0055A4"  # Bleu marine
+            secondColor = "#00203E"  # Bleu marine
         case "Ensemble pour la République":
             secondColor = "#FFD700"  # Or / Jaune
         case "Écologiste et Social":
@@ -73,9 +79,9 @@ def home(request):
         case "Les Démocrates":
             secondColor = "#FF6600"  # Orange
         case "Droite Républicaine":
-            secondColor = "#990000"  # Bordeaux / Rouge foncé
+            secondColor = "#3471FF"  # Bordeaux / Rouge foncé
         case "Libertés, Indépendants, Outre-mer et Territoires":
-            secondColor = "#66CCCC"  # Bleu turquoise
+            secondColor = "#00E1FF"  # Bleu turquoise
         case "Non inscrit(e)":
             secondColor = "#808080"  # Gris
         case "Gauche Démocrate et Républicaine":

@@ -14,7 +14,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    height: 110vh;
     margin: 0;
     font-family: "Orbitron", sans-serif;
 '>
@@ -62,37 +62,52 @@
     align-items: flex-start; /* align at top */
     gap: 20px;               /* optional space between contestants */
 ">
-    <div id="contestant1" style="text-align: center;">
-        <h1 style="color:darkblue;">{{firstInf.name}} {{firstInf.surname}}</h1>
+        <div id="contestant1" style="text-align: center;">
+            <h1 style="color:darkblue;">{{firstInf.name}} {{firstInf.surname}}</h1>
 
-        <h3>
-            <mark style="background-color:black;color:white;">
-                {{firstInf.num}}° Circonscription du Départment [{{firstInf.department}}]
-            </mark>
-        </h3>
+            <h3>
+                <mark style="background-color:black;color:white;">
+                    {{firstInf.num}}° Circonscription du Départment [{{firstInf.department}}]
+                </mark>
+            </h3>
 
-        <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">
-            {{firstInf.party}}
-        </h3>
-        <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
-    </div>
+            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">
+                {{firstInf.party}}
+            </h3>
+            <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+            <form id="choice1">
+            <button onclick="location.reload()"  onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'"style="transition: filter 0.2s ease;width:200px;display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;">Choisis-moi !</button>
+            </form>
+        </div>
 
-    <div id="barre" style="width:2px;height:100%;background-color:black;">
-    </div>
+        <div id="barre" style="width:2px;height:100%;background-color:black;"></div>
 
-    <div id="contestant2" style="text-align: center;">
-        <h1 style="color:darkblue;">{{secondInf.name}} {{secondInf.surname}}</h1>
+        <div id="contestant2" style="text-align: center;">
+            <h1 style="color:darkblue;">{{secondInf.name}} {{secondInf.surname}}</h1>
 
-        <h3>
-            <mark style="background-color:black;color:white;">
-                {{secondInf.num}}° Circonscription du Départment [{{secondInf.department}}]
-            </mark>
-        </h3>
+            <h3>
+                <mark style="background-color:black;color:white;">
+                    {{secondInf.num}}° Circonscription du Départment [{{secondInf.department}}]
+                </mark>
+            </h3>
 
-        <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">
-            {{secondInf.party}}
-        </h3>
-        <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">
+                {{secondInf.party}}
+            </h3>
+            <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+            <form id="choice2" method="POST" action="{% url 'views/update_value' %}">
+                {% csrf_token %}
+                <input type="hidden" name="item_id" value="{{ secondInf.id }}">
+                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
+            </form>
+            </div>
+
+
+            <form method="POST" action="{% url 'update_value' %}">
+    {% csrf_token %}
+    <input type="hidden" name="item_id" value="{{ secondInf.id }}">
+    <button type="submit">Update Value</button>
+</form>
     </div>
 </body>
 </html>
