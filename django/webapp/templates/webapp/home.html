@@ -75,8 +75,12 @@
                 {{firstInf.party}}
             </h3>
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
-            <form id="choice1">
-            <button onclick="location.reload()"  onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'"style="transition: filter 0.2s ease;width:200px;display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;">Choisis-moi !</button>
+            <form id="choice1" method="POST" action="{% url 'update_value' %}">
+                {% csrf_token %}
+                <input type="hidden" name="winSituation" value="first_wins">
+                <input type="hidden" name="winnerRank" value="{{firstInf.rank}}">
+                <input type="hidden" name="loserRank" value="{{secondInf.rank}}">
+                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
             </form>
         </div>
 
@@ -95,18 +99,14 @@
                 {{secondInf.party}}
             </h3>
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
-            <form id="choice2" method="POST" action="{% url 'views/update_value' %}">
+            <form id="choice2" method="POST" action="{% url 'update_value' %}">
                 {% csrf_token %}
-                <input type="hidden" name="item_id" value="{{ secondInf.id }}">
+                <input type="hidden" name="winSituation" value="second_wins">
+                <input type="hidden" name="winnerRank" value="{{secondInf.rank}}">
+                <input type="hidden" name="winnerRank" value="{{firstInf.rank}}">
                 <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
             </form>
             </div>
-
-
-            <form method="POST" action="{% url 'update_value' %}">
-    {% csrf_token %}
-    <input type="hidden" name="item_id" value="{{ secondInf.id }}">
-    <button type="submit">Update Value</button>
 </form>
     </div>
 </body>
