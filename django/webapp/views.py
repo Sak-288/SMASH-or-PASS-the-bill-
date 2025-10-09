@@ -5,7 +5,8 @@ from types import SimpleNamespace
 from django.shortcuts import redirect
 import random as rp
 import csv
-from elo import update_elos
+from . import elo
+from .elo import update_elos
 
 LIST_IDS = list(range(1, 574))
 
@@ -23,38 +24,37 @@ def update_value(request):
         winnerRank = request.POST.get("winnerRank")
         loserRank = request.POST.get("loserRank")
 
-        winner = content[winnerRank]
-        loser = content[loserRank]
+        winner = content[int(winnerRank) - 1]
+        loser = content[int(loserRank) - 1]
         winnerElo = winner[6]
         loserElo = loser[6]
-        winner[8] = int(winner[8]) + 1
-        loser[8] = int(loser[8]) + 1
+        winner[7] = int(winner[7]) + 1
+        loser[7] = int(loser[7]) + 1
 
-        winnerVotesNumber = int(winner[8])
-        loserVotesNumber = int(loser[8])
+        winnerVotesNumber = int(winner[7])
+        loserVotesNumber = int(loser[7])
 
-        if winSituation is "first_wins":
+        if winSituation == "first_wins":
             resultA = 1
             resultB = 0
+            newWinnerElo = update_elos(winnerElo, loserElo, resultA, resultB, winnerVotesNumber)[0]
+            newLoserElo = update_elos(winnerElo, loserElo, resultA, resultB, loserVotesNumber)[1]
         else:
             resultB = 1
             resultA = 0
-
-        newWinnerElo = update_elos(winnerElo, loserElo, resultA, resultB, winnerVotesNumber)[0]
-        newLoserElo = update_elos(winnerElo, loserElo, resultA, resultB, loserVotesNumber)[1]
+            newWinnerElo = update_elos(winnerElo, loserElo, resultA, resultB, winnerVotesNumber)[1]
+            newLoserElo = update_elos(winnerElo, loserElo, resultA, resultB, loserVotesNumber)[0]
 
         winner[6] = newWinnerElo
         loser[6] = newLoserElo
 
-        
-        with open(csv_file_path, "w", encoding="utf-8", newline='') as file:
-            file.write(content)
+        print(f"This is winner : {winner} and loser : {loser}")
 
         return redirect(request.META.get('HTTP_REFERER', '/'))
 
 def home(request):
     firstRank = rp.choice(LIST_IDS)
-    secondRank = rp.choice(LIST_IDS.pop(firstRank))    
+    secondRank = rp.choice([x for x in LIST_IDS if x != firstRank])    
     
     firstList = content[firstRank]
     secondList = content[secondRank]   
@@ -121,6 +121,6 @@ def home(request):
             secondColor = "#000000"  # Couleur par défaut si non reconnu
 
 
-    returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7])}
+    returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[8]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[8])}
 
     return render(request, "webapp/home.html", returnDict)
