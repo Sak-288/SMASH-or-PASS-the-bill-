@@ -19,6 +19,19 @@
     margin: 0;
     font-family: "Orbitron", sans-serif;
 '>
+    <style>
+        .icon-link {
+        display: inline-block;
+        text-decoration: none;
+        }
+        .icon-link:focus {
+        outline: 3px solid Highlight;
+        border-radius: 4px;
+        }
+        .icon-link img {
+        display: block;
+        }
+    </style>
     <!-- Main Title -->
     <div id="main-title-div" style="
         background-color: white;
@@ -65,18 +78,18 @@
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
                 <input type="hidden" name="gd_setting" value="women">
-                <i style="color:white;font-weight:bold;font-size:25px;" class="fa fa-venus"></i>
-                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 15px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
+                <button style="width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus"></i></button>
         </form>
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
-                <input type="hidden" name="men" value="men">
-                <i type='submit' style="color:white;font-weight:bold;font-size:25px;" class="fa fa-mars"></i>
+                <input type="hidden" name="gd_setting" value="men">
+                <button style="width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-mars"></i></button>
+
         </form>
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
-                <input type="hidden" name="mixt" value="mixt">
-                <i type='submit' style="color:white;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i>
+                <input type="hidden" name="gd_setting" value="mixt">
+                <button style="width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i></button>
         </form>
     </div>
 
@@ -125,7 +138,7 @@
             </form>
         </div>
 
-        <div id="barre" style="width:2px;height:100%;background-color:black;"></div>
+        <div id="barre" style="width:2px;height:85vh;background-color:black;"></div>
 
         <div id="contestant2" style="text-align: center;">
             <h1 style="color:darkblue;">{{secondInf.name}} {{secondInf.surname}}</h1>
@@ -156,5 +169,28 @@
             </div>
 </form>
     </div>
+    <div id="contact" style="height:50px;background-color:rgb(44, 44, 44);color:white;font-family:'Orbitron', sans-serif;font-size:15px;font-weight:bold;position:absolute;top:120%;width:100%;left:50%;transform:translate(-50%, -50%);display:flex;align-items: center;justify-content: space-around;">
+        <!-- Put an <img> or an inline SVG inside an <a> -->
+        <a class="icon-link" href="https://github.com" aria-label="GitHub">
+            <img src="{% static 'webapp/github-logo.png' %}" alt="Github Repo" width="40" height="40">
+        </a>
+        <a class="icon-link" href="/contact" aria-label="Contact">
+            <img src="{% static 'webapp/email-logo.png' %}" alt="Contactez-nous" width="45" height="45">
+        </a>
+    </div>
+    <script>
+        // Save scroll position before leaving or reloading the page
+        window.addEventListener("beforeunload", () => {
+            sessionStorage.setItem("scrollPos", window.scrollY);
+        });
+
+        // Restore scroll position on load
+        window.addEventListener("load", () => {
+            const scrollPos = sessionStorage.getItem("scrollPos");
+            if (scrollPos !== null) {
+            window.scrollTo(0, parseInt(scrollPos));
+            }
+        });
+    </script>
 </body>
 </html>

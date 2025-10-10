@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Form Success</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'webapp/home.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'webapp/perfect_logo.png' %}">
+        <style>
+            #title1{
+                position:absolute;
+                left:5%;
+                top:5%;
+                color:white;
+            }
+            #title2{
+                position:absolute;
+                left:5%;
+                top:20%;
+                color:white;
+            }
+            #home_send{
+                position:absolute;
+                left:5%;
+                top:35%;
+                border:none;
+                border-radius:3px;
+                background-color:rgb(60, 145, 255);
+                height:35px;
+                width:auto;
+                font-size: 25px;
+                font-family:'Orbitron', sans-serif;
+                color:white;
+                text-align:center;
+                cursor:pointer;
+            }
+            #home_send:hover{
+                background-color:rgb(42, 107, 190);
+            }
+            #home_send:active{
+                background-color:rgb(42, 107, 190);
+            }
+            #body {
+                position:relative;
+                width: 100%;
+                height: 100%;
+            }     
+        </style>
+    </head>
+    <body>
+        <h1 id="title1">The message was successfully sent.</h1>
+        <h2 id="title2">Click the button below to go back to HOME page :</h2>
+        <a id='linkception' href="{% url 'home' %}">
+            <button id="home_send">Go Back</button>
+        </a>            
+        <!-- Parallax Effect for Dynamic Starry Background in Body-->
+        <script>
+            (function() {
+                // Add event listener
+                document.addEventListener("mousemove", parallax_body);
+                const elem = document.querySelector("body");
+                
+                // Magic happens here
+                function parallax_body(e) {
+                    let _w = window.innerWidth;
+                    let _h = window.innerHeight;
+                    let _mouseX = e.clientX;
+                    let _mouseY = e.clientY;
+
+                    let offset_coeff = 0.005;
+                    let bg_Xoffset = -(_mouseX - _w/2) * offset_coeff;
+                    let bg_Yoffset = -(_mouseY - _h/2) * offset_coeff * -1.75;
+
+                    elem.style.backgroundPosition = `${bg_Xoffset}% ${bg_Yoffset}%`;
+                }
+            })();
+        </script>
+    </body>
+</html>

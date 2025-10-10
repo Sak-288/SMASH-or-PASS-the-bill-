@@ -33,7 +33,7 @@ def choose_setting(request):
         elif genderSetting == "women":
             return redirect('/home_women')
         else:
-            return redirect(request.META.get('HTTP_REFERER', '/'))
+            return redirect('/home')
 
 def update_value(request):
     with open(csv_file_path, mode='r', newline='', encoding="utf-8") as file:
@@ -46,8 +46,8 @@ def update_value(request):
 
         winner = content[int(winnerRank) - 1]
         loser = content[int(loserRank) - 1]
-        winnerElo = winner[6]
-        loserElo = loser[6]
+        winnerElo = float(winner[6])
+        loserElo = float(loser[6])
         winner[8] = int(winner[8]) + 1
         loser[8] = int(loser[8]) + 1
 
@@ -156,10 +156,10 @@ def home_women(request):
         content = list(csv.reader(file))
 
     firstRank = rp.choice(WOMEN)
-    secondRank = rp.choice([x for x in WOMEN if x != firstRank])    
+    secondRank = rp.choice([x for x in WOMEN if x != firstRank])  
     
-    firstList = content[firstRank]
-    secondList = content[secondRank]   
+    firstList = content[firstRank - 1]
+    secondList = content[secondRank - 1]   
 
     firstParty = firstList[5]
     firstColor = ""
@@ -234,8 +234,8 @@ def home_men(request):
     firstRank = rp.choice(MEN)
     secondRank = rp.choice([x for x in MEN if x != firstRank])    
     
-    firstList = content[firstRank]
-    secondList = content[secondRank]   
+    firstList = content[firstRank - 1]
+    secondList = content[secondRank - 1]   
 
     firstParty = firstList[5]
     firstColor = ""
@@ -299,6 +299,19 @@ def home_men(request):
             secondColor = "#000000"  # Couleur par défaut si non reconnu
 
 
-    returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7], gender=firstList[8]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7], gender=secondList[8])}
+    returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7], gender=firstList[9]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7], gender=secondList[9])}
 
     return render(request, "webapp/home.html", returnDict)
+
+def contact(request):
+    if request.method == "POST":
+        subject = request.POST['subject']
+        name = request.POST['name']
+        email = request.POST['email']
+
+        send_mail(f'Message from {name}', subject, email, [settings.EMAIL_HOST_USER], fail_silently=False)
+        return render(request, 'webapp/contact_successful.html')
+    return render(request, 'webapp/contact.html')
+
+def contact_successful(request):
+    return render(request, 'webapp/contact_successful.html')
