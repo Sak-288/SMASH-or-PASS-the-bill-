@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'webapp/marianne.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style='
     background-image: url("{% static "webapp/france.png" %}");
@@ -44,14 +45,48 @@
         </h1>
     </div>
 
+    <div id="options-div" style="
+        color:white;
+        background-color: black;
+        border-radius: 5px;
+        width: 40%;
+        height: 40px;
+        position: absolute;
+        top: 12.15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;           /* enable flex layout */
+        justify-content: space-around; /* spread contestants evenly */
+        align-items: center; /* align at top */
+        gap: 10%;               /* optional space between contestants */
+        font-weight:bold;
+        font-size:12px;
+    ">
+        <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
+                {% csrf_token %}
+                <input type="hidden" name="gd_setting" value="women">
+                <i style="color:white;font-weight:bold;font-size:25px;" class="fa fa-venus"></i>
+                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 15px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
+        </form>
+        <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
+                {% csrf_token %}
+                <input type="hidden" name="men" value="men">
+                <i type='submit' style="color:white;font-weight:bold;font-size:25px;" class="fa fa-mars"></i>
+        </form>
+        <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
+                {% csrf_token %}
+                <input type="hidden" name="mixt" value="mixt">
+                <i type='submit' style="color:white;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i>
+        </form>
+    </div>
+
     <div id="info-box" style="
     background-color: white;
     border-radius: 2px;
     width: 80%;
-    height:500px;
-    max-width: 1200px;
+    max-height:650px;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
@@ -74,13 +109,19 @@
             <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">
                 {{firstInf.party}}
             </h3>
+            
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+            
+            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">
+                Elo : {{firstInf.elo}}
+            </h3>
+
             <form id="choice1" method="POST" action="{% url 'update_value' %}">
                 {% csrf_token %}
                 <input type="hidden" name="winSituation" value="first_wins">
                 <input type="hidden" name="winnerRank" value="{{firstInf.rank}}">
                 <input type="hidden" name="loserRank" value="{{secondInf.rank}}">
-                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
+                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 15px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
             </form>
         </div>
 
@@ -98,13 +139,19 @@
             <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">
                 {{secondInf.party}}
             </h3>
+
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg" style="display: block; margin: 10px auto 0 auto; max-width: 200px; border-radius: 4px;">
+            
+            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">
+                Elo : {{secondInf.elo}}
+            </h3>
+
             <form id="choice2" method="POST" action="{% url 'update_value' %}">
                 {% csrf_token %}
                 <input type="hidden" name="winSituation" value="second_wins">
                 <input type="hidden" name="winnerRank" value="{{secondInf.rank}}">
                 <input type="hidden" name="loserRank" value="{{firstInf.rank}}">
-                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 30px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
+                <button  onclick="location.reload()" onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" onmousedown="this.style.filter='brightness(1.4)'" onmouseup="this.style.filter='brightness(1.2)'" style="transition: filter 0.2s ease; width:200px; display: block; margin: 15px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">Choisis-moi !</button>
             </form>
             </div>
 </form>
