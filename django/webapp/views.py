@@ -7,7 +7,10 @@ import random as rp
 import csv
 from . import elo
 from .elo import update_elos
-
+from django.core.mail import send_mail
+from django.conf import settings
+from django.shortcuts import render
+from .models import Contact
 LIST_IDS = list(range(1, 574))
 
 # get the app's base path
