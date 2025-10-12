@@ -179,6 +179,9 @@ def contact(request):
     return render(request, 'webapp/contact.html')
 
 def rankings(request):
+    with open(csv_file_path, mode='r', newline="", encoding='utf-8') as file:
+        content = list(csv.reader(file))
+
     copiedList = content.copy()
     for row in copiedList:
         row.append(get_color(row))
