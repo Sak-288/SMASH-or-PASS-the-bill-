@@ -139,7 +139,13 @@ def home_women(request):
         content = list(csv.reader(file))
 
     firstRank = rp.choice(WOMEN)
-    secondRank = rp.choice([x for x in WOMEN if x != firstRank])  
+    tempChoices = [x for x in WOMEN if x != firstRank]
+    tempCriteria = float(content[firstRank][6])
+    secondChoices = []
+    for choice in tempChoices:
+        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+            secondChoices.append(choice)
+    secondRank = rp.choice(secondChoices)
     
     firstList = content[firstRank - 1]
     secondList = content[secondRank - 1]   
@@ -161,7 +167,13 @@ def home_men(request):
         content = list(csv.reader(file))
 
     firstRank = rp.choice(MEN)
-    secondRank = rp.choice([x for x in MEN if x != firstRank])    
+    tempChoices = [x for x in MEN if x != firstRank]
+    tempCriteria = float(content[firstRank][6])
+    secondChoices = []
+    for choice in tempChoices:
+        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+            secondChoices.append(choice)
+    secondRank = rp.choice(secondChoices)
     
     firstList = content[firstRank - 1]
     secondList = content[secondRank - 1]   
