@@ -170,12 +170,22 @@ def home_men(request):
 
 def contact(request):
     if request.method == "POST":
-        subject = request.POST['subject']
         name = request.POST['name']
         email = request.POST['email']
+        subject = request.POST['subject']
 
-        send_mail(f'Message from {name}', subject, email, [settings.EMAIL_HOST_USER], fail_silently=False)
+        message = f"Message de {name} <{email}> :\n\n{subject}"
+
+        send_mail(
+            subject=f"Nouveau message du formulaire de contact : {name}",
+            message=message,
+            from_email=settings.EMAIL_HOST_USER,  # authenticated sender
+            recipient_list=[settings.EMAIL_HOST_USER],  # send to yourself
+            fail_silently=False,
+        )
+
         return redirect('/home')
+
     return render(request, 'webapp/contact.html')
 
 def rankings(request):
