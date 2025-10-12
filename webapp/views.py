@@ -119,7 +119,7 @@ def home(request):
     secondChoices = [x for x in LIST_IDS if x != firstRank]
     tempCriteria = float(content[firstRank][6])
     for choice in secondChoices:
-        if abs(float(content[choice][6])) <= 50:
+        if abs(float(content[choice][6]) - tempCriteria) <= 50:
             secondRank = choice
     
     firstList = content[firstRank]
