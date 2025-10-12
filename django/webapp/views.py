@@ -5,12 +5,14 @@ from types import SimpleNamespace
 from django.shortcuts import redirect
 import random as rp
 import csv
-from . import elo
-from .elo import update_elos
 from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import render
+from . import elo
+from .elo import update_elos
 from .models import Contact
+import numpy as np
+
 LIST_IDS = list(range(1, 574))
 
 # get the app's base path
@@ -27,6 +29,37 @@ with open(csv_file_path, mode='r', newline="", encoding='utf-8') as file:
             WOMEN.append(int(row[7]))
         else:
             MEN.append(int(row[7]))
+
+def get_color(deputy):
+    firstParty = deputy[5]
+    match firstParty:
+        case "La France insoumise - Nouveau Front Populaire":
+            firstColor = "#FF0000"  # Rouge vif
+        case "Horizons & Indépendants":
+            firstColor = "#0066CC"  # Bleu clair
+        case "Union des droites pour la République":
+            firstColor = "#004991"  # Bleu foncé
+        case "Socialistes et apparentés":
+            firstColor = "#FF3366"  # Rose / Rouge clair
+        case "Rassemblement National":
+            firstColor = "#00203E"  # Bleu marine
+        case "Ensemble pour la République":
+            firstColor = "#FFD700"  # Or / Jaune
+        case "Écologiste et Social":
+            firstColor = "#009933"  # Vert
+        case "Les Démocrates":
+            firstColor = "#FF6600"  # Orange
+        case "Droite Républicaine":
+            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
+        case "Libertés, Indépendants, Outre-mer et Territoires":
+            firstColor = "#00E1FF"  # Bleu turquoise
+        case "Non inscrit(e)":
+            firstColor = "#808080"  # Gris
+        case "Gauche Démocrate et Républicaine":
+            firstColor = "#800080"  # Violet
+        case _:
+            firstColor = "#000000"  # Couleur par défaut si non reconnu
+    return firstColor
 
 def choose_setting(request):
     if request.method == "POST":
@@ -88,66 +121,8 @@ def home(request):
     firstList = content[firstRank]
     secondList = content[secondRank]   
 
-    firstParty = firstList[5]
-    firstColor = ""
-    secondParty = secondList[5]
-    secondColor = ""
-
-    match firstParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            firstColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            firstColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            firstColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            firstColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            firstColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            firstColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            firstColor = "#009933"  # Vert
-        case "Les Démocrates":
-            firstColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            firstColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            firstColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            firstColor = "#800080"  # Violet
-        case _:
-            firstColor = "#000000"  # Couleur par défaut si non reconnu
-
-    match secondParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            secondColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            secondColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            secondColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            secondColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            secondColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            secondColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            secondColor = "#009933"  # Vert
-        case "Les Démocrates":
-            secondColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            secondColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            secondColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            secondColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            secondColor = "#800080"  # Violet
-        case _:
-            secondColor = "#000000"  # Couleur par défaut si non reconnu
+    firstColor = get_color(firstList)
+    secondColor = get_color(secondList)
 
 
     returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7])}
@@ -169,62 +144,8 @@ def home_women(request):
     secondParty = secondList[5]
     secondColor = ""
 
-    match firstParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            firstColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            firstColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            firstColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            firstColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            firstColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            firstColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            firstColor = "#009933"  # Vert
-        case "Les Démocrates":
-            firstColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            firstColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            firstColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            firstColor = "#800080"  # Violet
-        case _:
-            firstColor = "#000000"  # Couleur par défaut si non reconnu
-
-    match secondParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            secondColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            secondColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            secondColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            secondColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            secondColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            secondColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            secondColor = "#009933"  # Vert
-        case "Les Démocrates":
-            secondColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            secondColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            secondColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            secondColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            secondColor = "#800080"  # Violet
-        case _:
-            secondColor = "#000000"  # Couleur par défaut si non reconnu
-
+    firstColor = get_color(firstList)
+    secondColor = get_color(secondList)
 
     returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7])}
 
@@ -240,67 +161,8 @@ def home_men(request):
     firstList = content[firstRank - 1]
     secondList = content[secondRank - 1]   
 
-    firstParty = firstList[5]
-    firstColor = ""
-    secondParty = secondList[5]
-    secondColor = ""
-
-    match firstParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            firstColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            firstColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            firstColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            firstColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            firstColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            firstColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            firstColor = "#009933"  # Vert
-        case "Les Démocrates":
-            firstColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            firstColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            firstColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            firstColor = "#800080"  # Violet
-        case _:
-            firstColor = "#000000"  # Couleur par défaut si non reconnu
-
-    match secondParty:
-        case "La France insoumise - Nouveau Front Populaire":
-            secondColor = "#FF0000"  # Rouge vif
-        case "Horizons & Indépendants":
-            secondColor = "#0066CC"  # Bleu clair
-        case "Union des droites pour la République":
-            secondColor = "#004991"  # Bleu foncé
-        case "Socialistes et apparentés":
-            secondColor = "#FF3366"  # Rose / Rouge clair
-        case "Rassemblement National":
-            secondColor = "#00203E"  # Bleu marine
-        case "Ensemble pour la République":
-            secondColor = "#FFD700"  # Or / Jaune
-        case "Écologiste et Social":
-            secondColor = "#009933"  # Vert
-        case "Les Démocrates":
-            secondColor = "#FF6600"  # Orange
-        case "Droite Républicaine":
-            secondColor = "#3471FF"  # Bordeaux / Rouge foncé
-        case "Libertés, Indépendants, Outre-mer et Territoires":
-            secondColor = "#00E1FF"  # Bleu turquoise
-        case "Non inscrit(e)":
-            secondColor = "#808080"  # Gris
-        case "Gauche Démocrate et Républicaine":
-            secondColor = "#800080"  # Violet
-        case _:
-            secondColor = "#000000"  # Couleur par défaut si non reconnu
-
+    firstColor = get_color(firstList)
+    secondColor = get_color(secondList)
 
     returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7], gender=firstList[9]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7], gender=secondList[9])}
 
@@ -315,3 +177,25 @@ def contact(request):
         send_mail(f'Message from {name}', subject, email, [settings.EMAIL_HOST_USER], fail_silently=False)
         return redirect('/home')
     return render(request, 'webapp/contact.html')
+
+def rankings(request):
+    copiedList = content.copy()
+    for row in copiedList:
+        row.append(get_color(row))
+
+    rankingsList = []
+    max = 0
+    item = 0
+    for row in copiedList:
+        if float(row[6]) > max:
+            max = float(row[6])
+    for i in np.arange(int(max) + 1, 0, -0.5):
+        for row in copiedList:
+            if float(row[6]) == i:
+                if item == 0:
+                    rankingsList.append(row)
+                else:
+                    rankingsList.insert(item, row)
+                item += 1
+    return render(request, "webapp/rankings.html", {"rankingsList": rankingsList})
+    

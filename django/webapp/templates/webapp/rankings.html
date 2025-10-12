@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Smash or Pass (The Bill) - Edition Assemblée Nationale</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{% static 'webapp/marianne.ico' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style='
+    background-image: url("{% static "webapp/france.png" %}");
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    height: 110vh;
+    margin: 0;
+    font-family: "Orbitron", sans-serif;'>
+
+    <style>
+        .icon-link {
+        display: inline-block;
+        text-decoration: none;
+        transition: filter 0.2s ease, transform 0.1s ease;
+        }
+
+        .icon-link:focus {
+        outline: 2px solid cyan;
+        border-radius: 4px;
+        }
+
+        .icon-link img {
+        display: block;
+        }
+
+        .icon-link:hover {
+        cursor:pointer;
+        filter:blur();
+        transform: translateY(-1px);
+        }
+
+        .icon-link:active {
+        transform: translateY(0); /* optional: reset hover motion */
+        }
+    </style>
+
+        <div id="info-box" style="
+        background-color: white;
+        border-radius: 2px;
+        width: 32%;
+        max-height:650px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        box-sizing: border-box;
+
+        display: flex;            /* enable flex layout */
+        flex-direction: column;   /* stack elements vertically */
+        align-items: center;  /* align items to the left */
+        justify-content: flex-start; /* start from the top */
+        gap: 10px;                /* 20px space between elements */
+        
+        font-size:10px;
+        ">
+        {% for i in rankingsList %}
+            <div id="contestant{{ forloop.counter }}" style="text-align: center;">
+                <h1 style="color:darkblue;">{{i.1}} {{i.2}}</h1>
+
+                <h3>
+                    <mark style="background-color:black;color:white;">
+                        {{i.4}}° Circonscription du Département [{{i.3}}]
+                    </mark>
+                </h3>
+
+                <h3 style="color: {{ i.10 }}; font-weight: bold; margin: 5px 0;">
+                    {{i.5}}
+                </h3>
+                
+                <img alt="Portrait du Député"
+                    src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{ i.0 }}.jpg"
+                    style="display: block; margin: 10px auto 0 auto; max-width: 100px; border-radius: 4px;">
+                
+                <h3 style="color: {{ i.10 }}; font-weight: bold; margin: 5px 0;">
+                    Elo : {{i.6}}
+                </h3>
+            </div>
+        {% endfor %}
+        </div>
+        <script>
+        // Ensure page always starts at top
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+        </script>
+
+        <script>
+            function scrollSmooth(distance, duration) {
+                const start = window.scrollY;
+                const startTime = performance.now();
+
+                function scrollStep(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, start + distance * progress);
+                    if (progress < 1) {
+                        requestAnimationFrame(scrollStep);
+                    }
+                }
+
+                requestAnimationFrame(scrollStep);
+            }
+        </script>
+
+    <div id="down-arrow" style="position:fixed;top:50%;left:84%;transform:translate(-50%, -50%);">
+        <button onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" style="cursor:pointer;color:white;font-weight:bold;font-size:60px;width:80px;height:80px;transition: filter 0.2s ease;border:none;border-radius:20px;background-color:#000091;" onclick="scrollSmooth(10e5, 2000)">&#8609;</button>
+    </div>
+
+    <div id="up-arrow" style="position:fixed;top:50%;left:16%;transform:translate(-50%, -50%);">
+        <button onmouseover="this.style.filter='brightness(1.2)'"  onmouseout="this.style.filter='brightness(1)'" style="cursor:pointer;color:black;font-weight:bold;font-size:60px;width:80px;height:80px;transition: filter 0.2s ease;border:none;border-radius:20px;background-color:#E1000F;" onclick="scrollSmooth(-10e5, 2000)">&#8607;</button>
+    </div>
+
+    <div id="home-button" style="position:fixed;top:5%;left:5%;transform:translate(-50%, -50%);">
+        <a class="icon-link" href="/home" aria-label="Contact">
+            <img src="{% static 'webapp/marianne-banner.png' %}" alt="Contactez-nous" width="120" height="43.5">
+        </a>    
+    </div>
+    </body>
+</html>

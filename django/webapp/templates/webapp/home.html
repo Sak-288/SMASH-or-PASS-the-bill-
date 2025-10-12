@@ -9,17 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'webapp/marianne.ico' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body style='
     background-image: url("{% static "webapp/france.png" %}");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: center;
-    height: 110vh;
+    height: 120vh;
     margin: 0;
     font-family: "Orbitron", sans-serif;
 '>
     <style>
+        #gender_button:hover{
+            cursor:pointer;
+        }
         .icon-link {
         display: inline-block;
         text-decoration: none;
@@ -90,19 +95,39 @@
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
                 <input type="hidden" name="gd_setting" value="women">
-                <button onmouseover="this.style='cursor:pointer;width:50px;'" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus"></i></button>
+                <button id="gender_button" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus"></i></button>
         </form>
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
                 <input type="hidden" name="gd_setting" value="men">
-                <button onmouseover="this.style='cursor:pointer;width:50px;'" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-mars"></i></button>
+                <button id="gender_button" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-mars"></i></button>
 
         </form>
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
                 {% csrf_token %}
                 <input type="hidden" name="gd_setting" value="mixt">
-                <button onmouseover="this.style='cursor:pointer;width:50px;'" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i></button>
+                <button id="gender_button" style="height:30px;width:50px; display: block; margin: 0px auto 0 auto;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit"><i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i></button>
         </form>
+    </div>
+
+    <div id="classement-link" style="
+        color:black;
+        background-color: white;
+        border-radius: 5px;
+        width: 70%;
+        height: 40px;
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;           /* enable flex layout */
+        justify-content: space-around; /* spread contestants evenly */
+        align-items: center; /* align at top */
+        gap: 10%;               /* optional space between contestants */
+        font-weight:bold;
+        font-size:12px;
+    ">
+    <a href="/rankings"><h1>Check le classement des députés les plus HOTS de ta région !</h1></a>
     </div>
 
     <div id="info-box" style="
@@ -111,7 +136,7 @@
     width: 80%;
     max-height:650px;
     position: absolute;
-    top: 65%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
@@ -181,7 +206,7 @@
             </div>
 </form>
     </div>
-    <div id="contact" style="height:50px;background-color:rgb(44, 44, 44);color:white;font-family:'Orbitron', sans-serif;font-size:15px;font-weight:bold;position:absolute;top:120%;width:100%;left:50%;transform:translate(-50%, -50%);display:flex;align-items: center;justify-content: space-around;">
+    <div id="contact" style="height:50px;background-color:rgb(85, 85, 85);color:white;font-family:'Orbitron', sans-serif;font-size:15px;font-weight:bold;position:absolute;top:125%;width:100%;left:50%;transform:translate(-50%, -50%);display:flex;align-items: center;justify-content: space-around;">
         <!-- Put an <img> or an inline SVG inside an <a> -->
         <a class="icon-link" href="https://github.com/Sak-288/SMASH-or-PASS--the-bill-" aria-label="GitHub">
             <img src="{% static 'webapp/github-logo.png' %}" alt="Github Repo" width="40" height="40">
