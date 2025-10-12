@@ -12,6 +12,7 @@ from . import elo
 from .elo import update_elos
 from .models import Contact
 import numpy as np
+import math
 
 LIST_IDS = list(range(1, 574))
 
@@ -116,7 +117,11 @@ def home(request):
         content = list(csv.reader(file))
 
     firstRank = rp.choice(LIST_IDS)
-    secondRank = rp.choice([x for x in LIST_IDS if x != firstRank])    
+    secondChoices = [x for x in LIST_IDS if x != firstRank]
+    tempCriteria = content[firstRank][6]
+    for choice in secondChoices:
+        if math.abs(content[choice][6]) <= 50:
+            secondRank = choice
     
     firstList = content[firstRank]
     secondList = content[secondRank]   
