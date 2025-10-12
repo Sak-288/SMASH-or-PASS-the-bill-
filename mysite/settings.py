@@ -40,6 +40,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h@(p^+aupyqyf9=%j+w6+r4kr%zt9gl^^18swmptqc0x8rrj-d'
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://smashorpassthebill.up.railway.app",
+]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
