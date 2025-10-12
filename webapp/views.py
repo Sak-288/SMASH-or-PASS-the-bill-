@@ -117,15 +117,15 @@ def home(request):
 
     firstRank = rp.choice(LIST_IDS)
     tempChoices = [x for x in LIST_IDS if x != firstRank]
-    tempCriteria = float(content[firstRank][6])
+    tempCriteria = float(content[firstRank - 1][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
-    firstList = content[firstRank]
-    secondList = content[secondRank]   
+    firstList = content[firstRank - 1]
+    secondList = content[secondRank - 1]   
 
     firstColor = get_color(firstList)
     secondColor = get_color(secondList)
@@ -140,20 +140,15 @@ def home_women(request):
 
     firstRank = rp.choice(WOMEN)
     tempChoices = [x for x in WOMEN if x != firstRank and x != 575]
-    tempCriteria = float(content[firstRank][6])
+    tempCriteria = float(content[firstRank - 1][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
     firstList = content[firstRank - 1]
-    secondList = content[secondRank - 1]   
-
-    firstParty = firstList[5]
-    firstColor = ""
-    secondParty = secondList[5]
-    secondColor = ""
+    secondList = content[secondRank - 1] 
 
     firstColor = get_color(firstList)
     secondColor = get_color(secondList)
@@ -168,10 +163,10 @@ def home_men(request):
 
     firstRank = rp.choice(MEN)
     tempChoices = [x for x in MEN if x != firstRank]
-    tempCriteria = float(content[firstRank][6])
+    tempCriteria = float(content[firstRank - 1][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
