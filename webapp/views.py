@@ -120,7 +120,7 @@ def home(request):
     tempCriteria = float(content[firstRank][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
@@ -143,7 +143,7 @@ def home_women(request):
     tempCriteria = float(content[firstRank][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
@@ -171,7 +171,7 @@ def home_men(request):
     tempCriteria = float(content[firstRank][6])
     secondChoices = []
     for choice in tempChoices:
-        if abs(float(content[choice][6]) - tempCriteria) <= 50:
+        if abs(float(content[choice - 1][6]) - tempCriteria) <= 50:
             secondChoices.append(choice)
     secondRank = rp.choice(secondChoices)
     
