@@ -181,25 +181,8 @@ def home_men(request):
     return render(request, "webapp/home.html", returnDict)
 
 def contact(request):
-    if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        subject = request.POST['subject']
-
-        message = f"Message de {name} <{email}> :\n\n{subject}"
-
-        send_mail(
-            subject=f"Nouveau message du formulaire de contact : {name}",
-            message=message,
-            from_email=settings.EMAIL_HOST_USER,  # authenticated sender
-            recipient_list=[settings.EMAIL_HOST_USER],  # send to yourself
-            fail_silently=False,
-        )
-
         return redirect('/home')
-
-    return render(request, 'webapp/contact.html')
-
+        
 def rankings(request):
     with open(csv_file_path, mode='r', newline="", encoding='utf-8') as file:
         content = list(csv.reader(file))
