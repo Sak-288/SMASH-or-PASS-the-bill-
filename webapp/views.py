@@ -12,7 +12,6 @@ from . import elo
 from .elo import update_elos
 from .models import Contact
 import numpy as np
-import math
 
 LIST_IDS = list(range(1, 574))
 
@@ -120,7 +119,7 @@ def home(request):
     secondChoices = [x for x in LIST_IDS if x != firstRank]
     tempCriteria = content[firstRank][6]
     for choice in secondChoices:
-        if math.abs(content[choice][6]) <= 50:
+        if abs(content[choice][6]) <= 50:
             secondRank = choice
     
     firstList = content[firstRank]
@@ -128,7 +127,6 @@ def home(request):
 
     firstColor = get_color(firstList)
     secondColor = get_color(secondList)
-
 
     returnDict = {'firstInf':SimpleNamespace(id=firstList[0], name=firstList[1], surname=firstList[2], department=firstList[3], num=firstList[4], party=firstList[5], color=firstColor, elo=firstList[6], rank=firstList[7]), 'secondInf':SimpleNamespace(id=secondList[0], name=secondList[1], surname=secondList[2], department=secondList[3], num=secondList[4], party=secondList[5], color=secondColor, elo=secondList[6], rank=secondList[7])}
 
