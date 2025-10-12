@@ -116,11 +116,13 @@ def home(request):
         content = list(csv.reader(file))
 
     firstRank = rp.choice(LIST_IDS)
-    secondChoices = [x for x in LIST_IDS if x != firstRank]
+    tempChoices = [x for x in LIST_IDS if x != firstRank]
     tempCriteria = float(content[firstRank][6])
-    for choice in secondChoices:
+    secondChoices = []
+    for choice in tempChoices:
         if abs(float(content[choice][6]) - tempCriteria) <= 50:
-            secondRank = choice
+            secondChoices.append(choice)
+    secondRank = rp.choice(secondChoices)
     
     firstList = content[firstRank]
     secondList = content[secondRank]   
