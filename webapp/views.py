@@ -181,8 +181,10 @@ def home_men(request):
     return render(request, "webapp/home.html", returnDict)
 
 def contact(request):
+    if request.method == 'POST':
         return redirect('/home')
-        
+    return render(request, 'webapp/contact.html')
+
 def rankings(request):
     with open(csv_file_path, mode='r', newline="", encoding='utf-8') as file:
         content = list(csv.reader(file))
