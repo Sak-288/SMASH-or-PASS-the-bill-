@@ -54,7 +54,7 @@ GDR = []
 for row in content:
     match row[5]:
         case "La France insoumise - Nouveau Front Populaire":
-            LFI.append()
+            LFI.append(row)
         case "Horizons & Indépendants":
             HEI.append(row)
         case "Union des droites pour la République":
