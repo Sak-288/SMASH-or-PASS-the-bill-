@@ -19,6 +19,14 @@ LIST_IDS = list(range(1, 574))
 BASE_DIR = Path(__file__).resolve().parent  # points to webapp/
 
 csv_file_path = BASE_DIR / 'data' / 'liste.csv'
+csv_party_elos = BASE_DIR / 'data' / 'elos_partis.csv'
+
+def get_party_elo(party_list):
+    aggregate = 0
+    for deputy in party_list:
+        aggregate += float(deputy[6])
+    party_avr = round(aggregate / len(party_list), 0)
+    return party_avr
 
 WOMEN = []
 MEN = []
@@ -29,6 +37,53 @@ with open(csv_file_path, mode='r', newline="", encoding='utf-8') as file:
             WOMEN.append(int(row[7]))
         else:
             MEN.append(int(row[7]))
+
+LFI = []
+HEI = []
+UDR = []
+SEA = []
+RN = []
+EN = []
+ES = []
+DR = []
+DM = []
+LIOT = []
+NI = []
+GDR = []
+
+for row in content:
+    match row[5]:
+        case "La France insoumise - Nouveau Front Populaire":
+            LFI.append()
+        case "Horizons & Indépendants":
+            HEI.append(row)
+        case "Union des droites pour la République":
+            UDR.append(row)
+        case "Socialistes et apparentés":
+            SEA.append(row)
+        case "Rassemblement National":
+            RN.append(row)
+        case "Ensemble pour la République":
+            EN.append(row)
+        case "Écologiste et Social":
+            ES.append(row)
+        case "Les Démocrates":
+            DM.append(row)
+        case "Droite Républicaine":
+            DR.append(row)
+        case "Libertés, Indépendants, Outre-mer et Territoires":
+            LIOT.append(row)
+        case "Non inscrit(e)":
+            NI.append(row)
+        case "Gauche Démocrate et Républicaine":
+            GDR.append(row)
+        case _:
+            NI.append(row)
+
+
+def update_party_elos_dict():
+    partyElosDict = {'La France insoumise - Nouveau Front Populaire' : get_party_elo(LFI), 'Horizons & Indépendants' : get_party_elo(HEI), 'Union des droites pour la République' : get_party_elo(UDR), 'Socialistes et apparentés' : get_party_elo(SEA), 'Rassemblement National' : get_party_elo(RN), 'Ensemble pour la République' : get_party_elo(EN), 'Écologiste et Social' : get_party_elo(ES), 'Les Démocrates': get_party_elo(DM), 'Droite Républicaine' : get_party_elo(DR), 'Libertés, Indépendants, Outre-mer et Territoires' : get_party_elo(LIOT), 'Non inscrit(e)' : get_party_elo(NI), 'Gauche Démocrate et Républicaine' : get_party_elo(GDR)}
+    return partyElosDict
 
 def get_color(deputy):
     firstParty = deputy[5]
@@ -209,3 +264,5 @@ def rankings(request):
                 item += 1
     return render(request, "webapp/rankings.html", {"rankingsList": rankingsList})
     
+def rankings_parties(request):
+    return render(request, "webapp/rankings_parties.html", {"rankingsPartiesList" : update_party_elos_dict()})

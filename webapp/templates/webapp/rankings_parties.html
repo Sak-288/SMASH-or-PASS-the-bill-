@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Smash or Pass (The Bill) - Edition Assemblée Nationale</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'webapp/marianne.ico' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        background-image: url("{% static 'webapp/france.png' %}");
+        background-size: cover;
+        background-repeat: repeat-y;
+        background-position: center;
+        height: 110vh;
+        margin: 0;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      /* Icon button hover animations */
+      .icon-link {
+        display: inline-block;
+        text-decoration: none;
+        transition: filter 0.2s ease, transform 0.1s ease;
+      }
+
+      .icon-link:focus {
+        outline: 2px solid cyan;
+        border-radius: 4px;
+      }
+
+      .icon-link:hover {
+        cursor: pointer;
+        filter: brightness(1.2);
+        transform: translateY(-1px);
+      }
+
+      .icon-link:active {
+        transform: translateY(0);
+      }
+
+      /* Main box */
+      #info-box {
+        background-color: white;
+        border-radius: 2px;
+        width: 32%;
+        max-height: 650px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 10px;
+      }
+
+      #info-box img {
+        display: block;
+        margin: 10px auto 0 auto;
+        max-width: 100px;
+        border-radius: 4px;
+      }
+
+      /* Scroll buttons */
+      #down-arrow,
+      #up-arrow {
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #down-arrow {
+        left: 84%;
+      }
+
+      #up-arrow {
+        left: 16%;
+      }
+
+      #down-arrow button,
+      #up-arrow button {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 60px;
+        width: 80px;
+        height: 80px;
+        border: none;
+        border-radius: 20px;
+        transition: filter 0.2s ease;
+      }
+
+      #down-arrow button {
+        background-color: #000091;
+        color: white;
+      }
+
+      #up-arrow button {
+        background-color: #e1000f;
+        color: black;
+      }
+
+      #home-button {
+        position: fixed;
+        top: 5%;
+        left: 5%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        #info-box {
+          width: 60%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+                background-size:110%;
+                background-repeat: repeat-y;
+        }
+        #info-box {
+          width: 85%;
+          font-size: 12px;
+          max-height: none;
+          position: static;
+          transform: none;
+          margin: 20px auto;
+        }
+
+        #info-box img {
+          max-width: 120px;
+        }
+
+        #down-arrow,
+        #up-arrow {
+          top: auto;
+          bottom: 20px;
+          transform: none;
+        }
+
+        #down-arrow {
+          left: auto;
+          right: 20px;
+        }
+
+        #up-arrow {
+          left: 20px;
+        }
+
+        #down-arrow button,
+        #up-arrow button {
+          width: 60px;
+          height: 60px;
+          font-size: 40px;
+        }
+
+        #home-button {
+          top: 10px;
+          left: 10px;
+          transform: none;
+        }
+
+        #home-button img {
+          width: 90px;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #info-box {
+          width: 95%;
+          font-size: 11px;
+          padding: 10px;
+        }
+
+        #info-box img {
+          max-width: 100px;
+        }
+
+        #down-arrow button,
+        #up-arrow button {
+          width: 50px;
+          height: 50px;
+          font-size: 35px;
+        }
+
+        #home-button img {
+          width: 70px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="info-box">
+        <p>{{rankingsPartiesList}}</p>
+    </div>
+
+    <div id="down-arrow">
+      <button
+        onmouseover="this.style.filter='brightness(1.2)'"
+        onmouseout="this.style.filter='brightness(1)'"
+        onclick="scrollSmooth(10e5, 2000)"
+      >
+        &#8609;
+      </button>
+    </div>
+
+    <div id="up-arrow">
+      <button
+        onmouseover="this.style.filter='brightness(1.2)'"
+        onmouseout="this.style.filter='brightness(1)'"
+        onclick="scrollSmooth(-10e5, 2000)"
+      >
+        &#8607;
+      </button>
+    </div>
+
+    <div id="home-button">
+      <a class="icon-link" href="/home" aria-label="Accueil">
+        <img
+          src="{% static 'webapp/marianne-banner.png' %}"
+          alt="Accueil"
+          width="120"
+          height="43.5"
+        />
+      </a>
+    </div>
+
+    <script>
+      // Always start at the top on reload
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+
+      // Smooth scroll function
+      function scrollSmooth(distance, duration) {
+        const start = window.scrollY;
+        const startTime = performance.now();
+
+        function scrollStep(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          window.scrollTo(0, start + distance * progress);
+          if (progress < 1) requestAnimationFrame(scrollStep);
+        }
+
+        requestAnimationFrame(scrollStep);
+      }
+    </script>
+  </body>
+</html>
