@@ -160,7 +160,8 @@ def update_party_elos_dict():
         elo=get_party_elo(GDR),
         color=get_party_color('Gauche Démocrate et Républicaine')
     ),
-}    return partyElosDict
+}    
+    return partyElosDict
 
 def get_color(deputy):
     firstParty = deputy[5]
