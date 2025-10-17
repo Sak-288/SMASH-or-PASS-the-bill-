@@ -80,10 +80,87 @@ for row in content:
         case _:
             NI.append(row)
 
+def get_party_color(firstParty):
+    match firstParty:
+        case "La France insoumise - Nouveau Front Populaire":
+            firstColor = "#FF0000"  # Rouge vif
+        case "Horizons & Indépendants":
+            firstColor = "#0066CC"  # Bleu clair
+        case "Union des droites pour la République":
+            firstColor = "#004991"  # Bleu foncé
+        case "Socialistes et apparentés":
+            firstColor = "#FF3366"  # Rose / Rouge clair
+        case "Rassemblement National":
+            firstColor = "#00203E"  # Bleu marine
+        case "Ensemble pour la République":
+            firstColor = "#FFD700"  # Or / Jaune
+        case "Écologiste et Social":
+            firstColor = "#009933"  # Vert
+        case "Les Démocrates":
+            firstColor = "#FF6600"  # Orange
+        case "Droite Républicaine":
+            firstColor = "#3471FF"  # Bordeaux / Rouge foncé
+        case "Libertés, Indépendants, Outre-mer et Territoires":
+            firstColor = "#00E1FF"  # Bleu turquoise
+        case "Non inscrit(e)":
+            firstColor = "#808080"  # Gris
+        case "Gauche Démocrate et Républicaine":
+            firstColor = "#800080"  # Violet
+        case _:
+            firstColor = "#000000"  # Couleur par défaut si non reconnu
+    return firstColor
 
 def update_party_elos_dict():
-    partyElosDict = {'La France insoumise - Nouveau Front Populaire' : get_party_elo(LFI), 'Horizons & Indépendants' : get_party_elo(HEI), 'Union des droites pour la République' : get_party_elo(UDR), 'Socialistes et apparentés' : get_party_elo(SEA), 'Rassemblement National' : get_party_elo(RN), 'Ensemble pour la République' : get_party_elo(EN), 'Écologiste et Social' : get_party_elo(ES), 'Les Démocrates': get_party_elo(DM), 'Droite Républicaine' : get_party_elo(DR), 'Libertés, Indépendants, Outre-mer et Territoires' : get_party_elo(LIOT), 'Non inscrit(e)' : get_party_elo(NI), 'Gauche Démocrate et Républicaine' : get_party_elo(GDR)}
-    return partyElosDict
+    partyElosDict = {
+    'La France insoumise - Nouveau Front Populaire': SimpleNamespace(
+        elo=get_party_elo(LFI),
+        color=get_party_color('La France insoumise - Nouveau Front Populaire')
+    ),
+    'Horizons & Indépendants': SimpleNamespace(
+        elo=get_party_elo(HEI),
+        color=get_party_color('Horizons & Indépendants')
+    ),
+    'Union des droites pour la République': SimpleNamespace(
+        elo=get_party_elo(UDR),
+        color=get_party_color('Union des droites pour la République')
+    ),
+    'Socialistes et apparentés': SimpleNamespace(
+        elo=get_party_elo(SEA),
+        color=get_party_color('Socialistes et apparentés')
+    ),
+    'Rassemblement National': SimpleNamespace(
+        elo=get_party_elo(RN),
+        color=get_party_color('Rassemblement National')
+    ),
+    'Ensemble pour la République': SimpleNamespace(
+        elo=get_party_elo(EN),
+        color=get_party_color('Ensemble pour la République')
+    ),
+    'Écologiste et Social': SimpleNamespace(
+        elo=get_party_elo(ES),
+        color=get_party_color('Écologiste et Social')
+    ),
+    'Les Démocrates': SimpleNamespace(
+        elo=get_party_elo(DM),
+        color=get_party_color('Les Démocrates')
+    ),
+    'Droite Républicaine': SimpleNamespace(
+        elo=get_party_elo(DR),
+        color=get_party_color('Droite Républicaine')
+    ),
+    'Libertés, Indépendants, Outre-mer et Territoires': SimpleNamespace(
+        elo=get_party_elo(LIOT),
+        color=get_party_color('Libertés, Indépendants, Outre-mer et Territoires')
+    ),
+    'Non inscrit(e)': SimpleNamespace(
+        elo=get_party_elo(NI),
+        color=get_party_color('Non inscrit(e)')
+    ),
+    'Gauche Démocrate et Républicaine': SimpleNamespace(
+        elo=get_party_elo(GDR),
+        color=get_party_color('Gauche Démocrate et Républicaine')
+    ),
+}    return partyElosDict
 
 def get_color(deputy):
     firstParty = deputy[5]
