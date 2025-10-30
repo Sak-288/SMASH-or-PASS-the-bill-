@@ -315,6 +315,29 @@ def home_men(request):
 
 def contact(request):
     if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Get cleaned data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            
+            # Create email content
+            email_subject = f"Contact Form from SMASH OR PASS - Edition Assemnblée National"
+            email_message = f"""
+            Name: {name}
+            Email: {email}
+            
+            Message:
+            {subject}
+            """
+            # Send email
+            send_mail(
+                email_subject,
+                settings.DEFAULT_EMAIL,  # From email
+                [settings.DEFAULT_EMAIL],     # To email
+                fail_silently=False,
+            )
         return redirect('/home')
     return render(request, 'webapp/contact.html')
 

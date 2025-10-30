@@ -27,7 +27,7 @@
         #main-title-div {
             background-color: white;
             border-radius: 2px;
-            width: 80%;
+            width:auto;
             margin: 0px auto;
             display: flex;
             align-items: center;
@@ -83,11 +83,31 @@
             margin: 0;
         }
 
+        #parties-classement-link {
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+            width: 55%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        #parties-#classement-link h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+
         #info-box {
             background-color: white;
             border-radius: 2px;
-            width: 80%;
-            max-width: 1000px;
+            max-height:65%;
+            max-width: 80%;
             margin: 0px auto;
             padding: 20px;
             box-sizing: border-box;
@@ -275,6 +295,12 @@
     <div id="classement-link">
         <a href="/rankings">
             <h1>Check le classement des députés les plus HOTS de ta région !</h1>
+        </a>
+    </div>
+
+    <div id="parties-classement-link">
+        <a href="/rankings_parties">
+            <h1>Check le classement des parties</h1>
         </a>
     </div>
 

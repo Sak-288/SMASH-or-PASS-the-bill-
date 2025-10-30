@@ -49,6 +49,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '192.168.1.65', '127.0.0.1', '105.155.41.35']
 
+DEFAULT_EMAIL = "aminesakoute288@gmail.com"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
