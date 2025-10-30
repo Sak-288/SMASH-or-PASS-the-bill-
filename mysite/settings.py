@@ -47,14 +47,14 @@ CSRF_TRUSTED_ORIGINS = [
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.65', '127.0.0.1', '105.155.41.35']
+ALLOWED_HOSTS = ['localhost', '192.168.1.65', '192.168.1.81', '127.0.0.1', '105.155.41.35']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # or your email provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'aminesakoute288@gmail.com'
-EMAIL_HOST_PASSWORD = 'your-app-password'
+EMAIL_HOST_PASSWORD = 'dyjoykuccseccnbm'
 DEFAULT_FROM_EMAIL = 'aminesakoute288@gmail.com'
 
 # Application definition
@@ -68,7 +68,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp',
 ]
-
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',

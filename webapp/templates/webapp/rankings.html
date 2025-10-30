@@ -60,26 +60,25 @@
         background-color: white;
         border-radius: 2px;
         width: 32%;
-        max-height: 650px;
+        max-height: 100vh;
         position: absolute;
-        top: 55%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 20px;
+        padding: 2vw;
         box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        font-size: 10px;
+        justify-content: flex-start;;
+        font-size: 1.2vw;
       }
 
       #info-box img {
         display: block;
         margin: 10px auto 0 auto;
-        max-width: 100px;
+        max-width: 50%;
         border-radius: 4px;
       }
 
@@ -103,9 +102,9 @@
       #up-arrow button {
         cursor: pointer;
         font-weight: bold;
-        font-size: 60px;
-        width: 80px;
-        height: 80px;
+        font-size: 6vh;
+        width: 7.5vw;
+        height: 7.5vh;
         border: none;
         border-radius: 20px;
         transition: filter 0.2s ease;
@@ -127,100 +126,17 @@
         left: 5%;
         transform: translate(-50%, -50%);
       }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        #info-box {
-          width: 60%;
-        }
-      }
-
-      @media (max-width: 768px) {
-        body {
-                background-size:110%;
-                background-repeat: repeat-y;
-        }
-        #info-box {
-          width: 85%;
-          font-size: 12px;
-          max-height: none;
-          position: static;
-          transform: none;
-          margin: 20px auto;
-        }
-
-        #info-box img {
-          max-width: 120px;
-        }
-
-        #down-arrow,
-        #up-arrow {
-          top: auto;
-          bottom: 20px;
-          transform: none;
-        }
-
-        #down-arrow {
-          left: auto;
-          right: 20px;
-        }
-
-        #up-arrow {
-          left: 20px;
-        }
-
-        #down-arrow button,
-        #up-arrow button {
-          width: 60px;
-          height: 60px;
-          font-size: 40px;
-        }
-
-        #home-button {
-          top: 10px;
-          left: 10px;
-          transform: none;
-        }
-
-        #home-button img {
-          width: 90px;
-          height: auto;
-        }
-      }
-
-      @media (max-width: 480px) {
-        #info-box {
-          width: 95%;
-          font-size: 11px;
-          padding: 10px;
-        }
-
-        #info-box img {
-          max-width: 100px;
-        }
-
-        #down-arrow button,
-        #up-arrow button {
-          width: 50px;
-          height: 50px;
-          font-size: 35px;
-        }
-
-        #home-button img {
-          width: 70px;
-        }
-      }
     </style>
   </head>
 
   <body>
     <div id="info-box">
       {% for i in rankingsList %}
-      <div id="contestant{{ forloop.counter }}" style="text-align: center">
+      <div id="contestant{{ forloop.counter }}" style="text-align: center;font-size:1.5vw;">
         <h1 style="color: darkblue">{{ i.1 }} {{ i.2 }}</h1>
 
         <h3>
-          <mark style="background-color: black; color: white">
+          <mark style="background-color: black; color: white; font-size:1.5vw;">
             {{ i.4 }}° Circonscription du Département [{{ i.3 }}]
           </mark>
         </h3>
@@ -230,6 +146,7 @@
             color: {{ i.10 }};
             font-weight: bold;
             margin: 5px 0;
+            font-size:1.5vw;
           "
         >
           {{ i.5 }}
@@ -245,6 +162,7 @@
             color: {{ i.10 }};
             font-weight: bold;
             margin: 5px 0;
+            font-size:1.5vw;
           "
         >
           Elo : {{ i.6 }}

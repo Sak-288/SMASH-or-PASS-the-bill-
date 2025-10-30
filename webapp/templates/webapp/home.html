@@ -18,7 +18,7 @@
             background-size: cover;
             background-repeat: repeat-y;
             background-position: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             font-family: "Orbitron", sans-serif;
             overflow-x: hidden;
@@ -37,9 +37,9 @@
         #main-title-h {
             text-decoration: underline;
             color: black;
-            font-size: 25px;
+            font-size: 2vw;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 1vh 0;
             text-align: center;
             white-space: nowrap;
         }
@@ -56,7 +56,7 @@
             gap: 10%;
             font-weight: bold;
             font-size: 12px;
-            padding: 10px;
+            padding: 1vh;
         }
 
         #gender_button:hover {
@@ -68,18 +68,18 @@
             background-color: white;
             border-radius: 5px;
             width: 55%;
-            margin: 20px auto;
+            margin: 2vh auto;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
-            padding: 10px;
+            font-size: 1vh;
+            padding: 1.25vh;
         }
 
         #classement-link h1 {
-            font-size: 18px;
+            font-size: 2.25vh;
             margin: 0;
         }
 
@@ -88,54 +88,56 @@
             background-color: white;
             border-radius: 5px;
             width: 55%;
-            margin: 20px auto;
+            margin: 2vh auto;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
-            padding: 10px;
+            font-size: 1vh;
+            padding: 1.25vh;
         }
 
         #parties-classement-link h1 {
-            font-size: 18px;
+            font-size: 2.25vh;
             margin: 0;
         }
 
         #info-box {
             background-color: white;
             border-radius: 2px;
-            max-height:20;
-            max-width: 90%;
+            max-height:60vh;
+            max-width: 90vw;
             margin: 0px auto;
-            padding: 20px;
+            padding: 1.5vw;
             box-sizing: border-box;
             display: flex;
             justify-content: space-around;
             align-items: flex-start;
-            gap: 20px;
             flex-wrap: wrap;
         }
 
         #contestant1, #contestant2 {
             text-align: center;
             flex: 1 1 45%;
-            min-width: 250px;
+            max-width: 45%;
+            max-height:90%;
         }
 
         #contestant1 img,
         #contestant2 img {
             display: block;
-            margin: 10px auto 0 auto;
-            max-width: 200px;
+            margin: 2vh auto 0 auto;
+            width: 40%;
             border-radius: 4px;
-            height: auto;
+            height: 40%;
+            max-height:30vh;
+            max-width:30%;
         }
 
         #barre {
             width: 2px;
-            height: 80vh;
+            height: 50%;
             background-color: black;
         }
 
@@ -143,14 +145,14 @@
             background-color: rgb(85, 85, 85);
             color: white;
             font-family: "Orbitron", sans-serif;
-            font-size: 15px;
             font-weight: bold;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            padding: 10px 0;
-            margin-top: 0px;
+            padding: 2vh 0;
+            position:absolute;
+            bottom:0%;
         }
 
         .icon-link {
@@ -176,87 +178,6 @@
         .icon-link:active {
             transform: translateY(0);
         }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 768px) {
-            body {
-                background-size:110%;
-                background-repeat: repeat-y;
-            }
-            #main-title-div {
-                width: 95%;
-            }
-
-            #main-title-h {
-                font-size: 18px;
-                white-space: normal;
-                line-height: 1.2;
-            }
-
-            #options-div {
-                flex-direction: column;
-                width: 90%;
-                gap: 10px;
-                font-size: 14px;
-            }
-
-            #options-div button {
-                width: 60px;
-                height: 35px;
-                font-size: 18px;
-            }
-
-            #classement-link {
-                width: 90%;
-                height: auto;
-                text-align: center;
-            }
-
-            #classement-link h1 {
-                font-size: 14px;
-            }
-
-            #info-box {
-                flex-direction: column;
-                align-items: center;
-                width: 95%;
-            }
-
-            #barre {
-                display: none;
-            }
-
-            #contestant1 img,
-            #contestant2 img {
-                max-width: 150px;
-            }
-
-            #contact {
-                flex-direction: column;
-                font-size: 13px;
-                padding: 15px 0;
-            }
-
-            #contact img {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #main-title-h {
-                font-size: 14px;
-            }
-
-            #options-div button {
-                width: 50px;
-                height: 30px;
-            }
-
-            #classement-link h1 {
-                font-size: 12px;
-            }
-        }
     </style>
 </head>
 
@@ -270,24 +191,24 @@
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
             {% csrf_token %}
             <input type="hidden" name="gd_setting" value="women">
-            <button id="gender_button" type="submit" style="height:30px;width:50px;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;">
-                <i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus"></i>
+            <button id="gender_button" type="submit" style="min-height:3vh;min-width:5vw;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:1vh;">
+                <i style="color:black;font-weight:bold;font-size:2.4vh;" class="fa fa-venus"></i>
             </button>
         </form>
 
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
             {% csrf_token %}
             <input type="hidden" name="gd_setting" value="men">
-            <button id="gender_button" type="submit" style="height:30px;width:50px;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;">
-                <i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-mars"></i>
+            <button id="gender_button" type="submit" style="min-height:3vh;min-width:5vw;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:1vh;">
+                <i style="color:black;font-weight:bold;font-size:2.4vh;" class="fa fa-mars"></i>
             </button>
         </form>
 
         <form id="gd_setting" method="POST" action="{% url 'choose_setting' %}">
             {% csrf_token %}
             <input type="hidden" name="gd_setting" value="mixt">
-            <button id="gender_button" type="submit" style="height:30px;width:50px;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;">
-                <i style="color:black;font-weight:bold;font-size:25px;" class="fa fa-venus-mars"></i>
+            <button id="gender_button" type="submit" style="min-height:3vh;min-width:5vw;border:none;border-radius:2px;background-color:white;color:black;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:1vh;">
+                <i style="color:black;font-weight:bold;font-size:2.4vh;" class="fa fa-venus-mars"></i>
             </button>
         </form>
     </div>
@@ -310,16 +231,16 @@
             <h3>
                 <mark style="background-color:black;color:white;">{{firstInf.num}}° Circonscription du Département [{{firstInf.department}}]</mark>
             </h3>
-            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">{{firstInf.party}}</h3>
+            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 2.5vh 0;">{{firstInf.party}}</h3>
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{firstInf.id}}.jpg">
-            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 5px 0;">Elo : {{firstInf.elo}}</h3>
+            <h3 style="color: {{firstInf.color}}; font-weight: bold; margin: 1.5vh 0;">Elo : {{firstInf.elo}}</h3>
 
             <form id="choice1" method="POST" action="{% url 'update_value' %}">
                 {% csrf_token %}
                 <input type="hidden" name="winSituation" value="first_wins">
                 <input type="hidden" name="winnerRank" value="{{firstInf.rank}}">
                 <input type="hidden" name="loserRank" value="{{secondInf.rank}}">
-                <button onclick="location.reload()" style="cursor:pointer;transition:filter 0.2s ease;width:200px;margin:15px auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">
+                <button onclick="location.reload()" style="cursor:pointer;transition:filter 0.2s ease;width:30%;margin:0.5vh auto 0 auto;border:none;border-radius:2px;background-color:{{firstInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:1vw;height:2vw;" type="submit">
                     Choisis-moi !
                 </button>
             </form>
@@ -332,16 +253,16 @@
             <h3>
                 <mark style="background-color:black;color:white;">{{secondInf.num}}° Circonscription du Département [{{secondInf.department}}]</mark>
             </h3>
-            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">{{secondInf.party}}</h3>
+            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 2.5vh 0;">{{secondInf.party}}</h3>
             <img alt="Portrait du Député" src="https://www.assemblee-nationale.fr/dyn/static/tribun/17/photos/carre/{{secondInf.id}}.jpg">
-            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 5px 0;">Elo : {{secondInf.elo}}</h3>
+            <h3 style="color: {{secondInf.color}}; font-weight: bold; margin: 1.5vh 0;">Elo : {{secondInf.elo}}</h3>
 
             <form id="choice2" method="POST" action="{% url 'update_value' %}">
                 {% csrf_token %}
                 <input type="hidden" name="winSituation" value="second_wins">
                 <input type="hidden" name="winnerRank" value="{{secondInf.rank}}">
                 <input type="hidden" name="loserRank" value="{{firstInf.rank}}">
-                <button onclick="location.reload()" style="cursor:pointer;transition:filter 0.2s ease;width:200px;margin:15px auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:15px;" type="submit">
+                <button onclick="location.reload()" style="cursor:pointer;transition:filter 0.2s ease;width:30%;height:2vw;margin:0.5vh auto 0 auto;border:none;border-radius:2px;background-color:{{secondInf.color}};color:white;font-weight:bold;font-family:'Orbitron', sans-serif;font-size:1vw;" type="submit">
                     Choisis-moi !
                 </button>
             </form>

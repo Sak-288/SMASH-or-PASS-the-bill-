@@ -81,7 +81,83 @@ for row in content:
         case _:
             NI.append(row)
 
-def get_party_color(firstParty):
+def update_party_elos_dict():
+    partyElosList = [
+        SimpleNamespace(
+            party_name="La France insoumise - Nouveau Front Populaire", 
+            elo=get_party_elo(LFI), 
+            color=get_party_color("La France insoumise - Nouveau Front Populaire")
+        ),
+        SimpleNamespace(
+            party_name="Horizons & Indépendants",
+            elo=get_party_elo(HEI),
+            color=get_party_color("Horizons & Indépendants")
+        ),
+        SimpleNamespace(
+            party_name="Union des droites pour la République",
+            elo=get_party_elo(UDR),
+            color=get_party_color("Union des droites pour la République")
+        ),
+        SimpleNamespace(
+            party_name="Socialistes et apparentés",
+            elo=get_party_elo(SEA),
+            color=get_party_color("Socialistes et apparentés")
+        ),
+        SimpleNamespace(
+            party_name="Rassemblement National",
+            elo=get_party_elo(RN),
+            color=get_party_color("Rassemblement National")
+        ),
+        SimpleNamespace(
+            party_name="Ensemble pour la République",
+            elo=get_party_elo(EN),
+            color=get_party_color("Ensemble pour la République")
+        ),
+        SimpleNamespace(
+            party_name="Écologiste et Social",
+            elo=get_party_elo(ES),
+            color=get_party_color("Écologiste et Social")
+        ),
+        SimpleNamespace(
+            party_name="Les Démocrates",
+            elo=get_party_elo(DM),
+            color=get_party_color("Les Démocrates")
+        ),
+        SimpleNamespace(
+            party_name="Droite Républicaine",
+            elo=get_party_elo(DR),
+            color=get_party_color("Droite Républicaine")
+        ),
+        SimpleNamespace(
+            party_name="Libertés, Indépendants, Outre-mer et Territoires",
+            elo=get_party_elo(LIOT),
+            color=get_party_color("Libertés, Indépendants, Outre-mer et Territoires")
+        ),
+        SimpleNamespace(
+            party_name="Non inscrit(e)",
+            elo=get_party_elo(NI),
+            color=get_party_color("Non inscrit(e)")
+        ),
+        SimpleNamespace(
+            party_name="Gauche Démocrate et Républicaine",
+            elo=get_party_elo(GDR),
+            color=get_party_color("Gauche Démocrate et Républicaine")
+        ),
+    ]
+
+    sorted_list = []
+    elos_list = [x.elo for x in partyElosList]
+    elos_list.sort(reverse=True)
+    for x in elos_list:
+        for y in partyElosList:
+            if y.elo == x:
+                sorted_list.append(y)
+                partyElosList = [z for z in partyElosList if z != y]
+    
+    return sorted_list
+
+def get_party_color(partyname):
+    firstParty = partyname
     match firstParty:
         case "La France insoumise - Nouveau Front Populaire":
             firstColor = "#FF0000"  # Rouge vif
@@ -110,59 +186,6 @@ def get_party_color(firstParty):
         case _:
             firstColor = "#000000"  # Couleur par défaut si non reconnu
     return firstColor
-
-def update_party_elos_dict():
-    partyElosDict = {
-    'La France insoumise - Nouveau Front Populaire': SimpleNamespace(
-        elo=get_party_elo(LFI),
-        color=get_party_color('La France insoumise - Nouveau Front Populaire')
-    ),
-    'Horizons & Indépendants': SimpleNamespace(
-        elo=get_party_elo(HEI),
-        color=get_party_color('Horizons & Indépendants')
-    ),
-    'Union des droites pour la République': SimpleNamespace(
-        elo=get_party_elo(UDR),
-        color=get_party_color('Union des droites pour la République')
-    ),
-    'Socialistes et apparentés': SimpleNamespace(
-        elo=get_party_elo(SEA),
-        color=get_party_color('Socialistes et apparentés')
-    ),
-    'Rassemblement National': SimpleNamespace(
-        elo=get_party_elo(RN),
-        color=get_party_color('Rassemblement National')
-    ),
-    'Ensemble pour la République': SimpleNamespace(
-        elo=get_party_elo(EN),
-        color=get_party_color('Ensemble pour la République')
-    ),
-    'Écologiste et Social': SimpleNamespace(
-        elo=get_party_elo(ES),
-        color=get_party_color('Écologiste et Social')
-    ),
-    'Les Démocrates': SimpleNamespace(
-        elo=get_party_elo(DM),
-        color=get_party_color('Les Démocrates')
-    ),
-    'Droite Républicaine': SimpleNamespace(
-        elo=get_party_elo(DR),
-        color=get_party_color('Droite Républicaine')
-    ),
-    'Libertés, Indépendants, Outre-mer et Territoires': SimpleNamespace(
-        elo=get_party_elo(LIOT),
-        color=get_party_color('Libertés, Indépendants, Outre-mer et Territoires')
-    ),
-    'Non inscrit(e)': SimpleNamespace(
-        elo=get_party_elo(NI),
-        color=get_party_color('Non inscrit(e)')
-    ),
-    'Gauche Démocrate et Républicaine': SimpleNamespace(
-        elo=get_party_elo(GDR),
-        color=get_party_color('Gauche Démocrate et Républicaine')
-    ),
-}    
-    return partyElosDict
 
 def get_color(deputy):
     firstParty = deputy[5]
@@ -315,31 +338,24 @@ def home_men(request):
     return render(request, "webapp/home.html", returnDict)
 
 def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # Get cleaned data
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            
-            # Create email content
-            email_subject = f"Contact Form from SMASH OR PASS - Edition Assemnblée National"
-            email_message = f"""
-            Name: {name}
-            Email: {email}
-            
-            Message:
-            {subject}
-            """
-            # Send email
-            send_mail(
-                email_subject,
-                settings.DEFAULT_FROM_EMAIL,  # From email
-                [settings.EMAIL_HOST_USER],     # To email
-                fail_silently=False,
-            )
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+
+        message = f"""Name  {name} 
+    Email : <{email}> :\n\n{subject}"""
+
+        send_mail(
+            subject=f"Smash or Pass - Message de {name}",
+            message=message,
+            from_email=settings.EMAIL_HOST_USER,  # authenticated sender
+            recipient_list=[settings.EMAIL_HOST_USER],  # send to yourself
+            fail_silently=False,
+        )
+
         return redirect('/home')
+
     return render(request, 'webapp/contact.html')
 
 def rankings(request):
@@ -367,4 +383,5 @@ def rankings(request):
     return render(request, "webapp/rankings.html", {"rankingsList": rankingsList})
     
 def rankings_parties(request):
-    return render(request, "webapp/rankings_parties.html", {"rankingsPartiesList" : update_party_elos_dict()})
+    print(update_party_elos_dict())
+    return render(request, "webapp/rankings_parties.html", {'rankingsList' : update_party_elos_dict})
