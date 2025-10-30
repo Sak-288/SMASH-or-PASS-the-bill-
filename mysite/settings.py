@@ -26,7 +26,7 @@ DATABASES = {
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATICFILES_DIRS = [ BASE_DIR / "webapp" / "static" ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static"
 
 # Media files (uploads)
 MEDIA_URL = '/media/'
@@ -45,9 +45,9 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '192.168.1.65', '127.0.0.1', '105.155.41.35']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
