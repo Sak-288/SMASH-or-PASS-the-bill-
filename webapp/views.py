@@ -12,6 +12,7 @@ from . import elo
 from .elo import update_elos
 from .models import Contact
 import numpy as np
+from forms.py import ContactForm
 
 LIST_IDS = list(range(1, 574))
 
