@@ -335,8 +335,8 @@ def contact(request):
             # Send email
             send_mail(
                 email_subject,
-                settings.DEFAULT_EMAIL,  # From email
-                [settings.DEFAULT_EMAIL],     # To email
+                settings.DEFAULT_FROM_EMAIL,  # From email
+                [settings.EMAIL_HOST_USER],     # To email
                 fail_silently=False,
             )
         return redirect('/home')
