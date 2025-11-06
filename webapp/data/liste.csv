@@ -1,4 +1,4 @@
-795228,Nadège,Abomangoli,Seine-Saint-Denis,10,La France insoumise - Nouveau Front Populaire,1043.0,1,1,F
+795228,Nadège,Abomangoli,Seine-Saint-Denis,10,La France insoumise - Nouveau Front Populaire,1014.0,1,2,F
 794278,Xavier,Albertini,Marne,1,Horizons & Indépendants,1000,2,0,M
 793262,Laurent,Alexandre,Aveyron,2,La France insoumise - Nouveau Front Populaire,1000,3,0,M
 793992,Henri,Alfandari,Indre-et-Loire,3,Horizons & Indépendants,1000,4,0,M
@@ -24,7 +24,7 @@
 841701,Léa,Balage El Mariky,Paris,3,Écologiste et Social,971.0,24,3,F
 719558,Erwan,Balanant,Finistère,8,Les Démocrates,959.0,25,1,M
 794562,Philippe,Ballard,Oise,2,Rassemblement National,1000,26,0,M
-842279,Anchya,Bamana,Mayotte,2,Rassemblement National,1006.0,27,1,F
+842279,Anchya,Bamana,Mayotte,2,Rassemblement National,999.0,27,2,F
 720256,Géraldine,Bannier,Mayenne,2,Les Démocrates,1000,28,0,M
 643143,Christian,Baptiste,Guadeloupe,2,Socialistes et apparentés,1048.0,29,1,M
 368,Michel,Barnier,Paris,2,Droite Républicaine,1000,30,0,M
@@ -36,14 +36,14 @@
 793374,Romain,Baubry,Bouches-du-Rhône,15,Rassemblement National,1000,36,0,M
 606793,Laurent,Baumel,Indre-et-Loire,4,Socialistes et apparentés,1000,37,0,M
 642847,Thibault,Bazin,Meurthe-et-Moselle,4,Droite Républicaine,1000,38,0,M
-718884,Valérie,Bazin-Malgras,Aube,2,Droite Républicaine,963.0,39,4,F
+718884,Valérie,Bazin-Malgras,Aube,2,Droite Républicaine,995.0,39,5,F
 793158,José,Beaurain,Aisne,4,Rassemblement National,1000,40,0,M
 642935,Olivier,Becht,Haut-Rhin,5,Ensemble pour la République,1000,41,0,M
 720362,Belkhir,Belhaddad,Moselle,1,Socialistes et apparentés,1000,42,0,M
 795278,Béatrice,Bellamy,Vendée,2,Horizons & Indépendants,915.7170493926706,43,2,F
 842211,Béatrice,Bellay,Martinique,3,Socialistes et apparentés,1050.0,44,1,F
 795362,Lisa,Belluco,Vienne,1,Écologiste et Social,996.0,45,2,F
-841657,Anaïs,Belouassa-Cherifi,Rhône,1,La France insoumise - Nouveau Front Populaire,1046.0,46,2,F
+841657,Anaïs,Belouassa-Cherifi,Rhône,1,La France insoumise - Nouveau Front Populaire,1013.0,46,3,F
 795454,Karim,Ben Cheikh,Français établis hors de France,9,Écologiste et Social,1000,47,0,M
 841315,Karim,Benbrahim,Loire-Atlantique,1,Socialistes et apparentés,1000,48,0,M
 332228,Thierry,Benoit,Ille-et-Vilaine,6,Horizons & Indépendants,1000,49,0,M
@@ -74,7 +74,7 @@
 841885,Arnaud,Bonnet,Seine-et-Marne,8,Écologiste et Social,1000,74,0,M
 721410,Émilie,Bonnivard,Savoie,3,Droite Républicaine,995.0,75,1,F
 266793,Jean-Yves,Bony,Cantal,2,Droite Républicaine,1000,76,0,M
-793844,Pascale,Bordes,Gard,3,Rassemblement National,1081.0,77,3,F
+793844,Pascale,Bordes,Gard,3,Rassemblement National,1050.0,77,4,F
 642695,Éric,Bothorel,Côtes-d'Armor,5,Ensemble pour la République,1000,78,0,M
 721816,Ian,Boucard,Territoire de Belfort,1,Droite Républicaine,1000,79,0,M
 606507,Florent,Boudié,Gironde,10,Ensemble pour la République,1048.0,80,1,M
@@ -105,9 +105,9 @@
 796106,Édouard,Bénard,Seine-Maritime,3,Gauche Démocrate et Républicaine,1000,105,0,M
 841023,Pierre-Yves,Cadalen,Finistère,2,La France insoumise - Nouveau Front Populaire,1000,106,0,M
 795762,Elie,Califer,Guadeloupe,4,Socialistes et apparentés,1000,107,0,M
-721750,Céline,Calvez,Hauts-de-Seine,5,Ensemble pour la République,1050.0,108,1,F
+721750,Céline,Calvez,Hauts-de-Seine,5,Ensemble pour la République,1087.0,108,2,F
 608264,Colette,Capdevielle,Pyrénées-Atlantiques,5,Socialistes et apparentés,950.0,109,1,F
-795330,Eléonore,Caroit,Français établis hors de France,2,Ensemble pour la République,1004.0,110,4,F
+795330,Eléonore,Caroit,Français établis hors de France,2,Ensemble pour la République,1010.0,110,5,F
 796090,Aymeric,Caron,Paris,18,La France insoumise - Nouveau Front Populaire,1000,111,0,M
 793912,Sylvain,Carrière,Hérault,8,La France insoumise - Nouveau Front Populaire,1000,112,0,M
 719138,Michel,Castellani,Haute-Corse,1,"Libertés, Indépendants, Outre-mer et Territoires",1000,113,0,M
@@ -141,7 +141,7 @@
 721210,Alexis,Corbière,Seine-Saint-Denis,7,Écologiste et Social,1000,141,0,M
 718850,Pierre,Cordier,Ardennes,2,Droite Républicaine,1000,142,0,M
 719118,François,Cormier-Bouligeon,Cher,1,Ensemble pour la République,1036.0,143,2,M
-722390,Josiane,Corneloup,Saône-et-Loire,2,Droite Républicaine,976.0,144,4,F
+722390,Josiane,Corneloup,Saône-et-Loire,2,Droite Républicaine,970.0,144,5,F
 793520,Mickaël,Cosson,Côtes-d'Armor,1,Les Démocrates,1000,145,0,M
 795136,Jean-François,Coulomme,Savoie,4,La France insoumise - Nouveau Front Populaire,1000,146,0,M
 841295,Pierrick,Courbon,Loire,1,Socialistes et apparentés,1000,147,0,M
@@ -171,7 +171,7 @@
 606573,Fanny,Dombre Coste,Hérault,3,Socialistes et apparentés,1000,171,0,F
 793146,Nicolas,Dragon,Aisne,1,Rassemblement National,1000,172,0,M
 720154,Nicole,Dubré-Chirat,Maine-et-Loire,6,Ensemble pour la République,1000,173,0,F
-608826,Virginie,Duby-Muller,Haute-Savoie,4,Droite Républicaine,958.0,174,1,F
+608826,Virginie,Duby-Muller,Haute-Savoie,4,Droite Républicaine,914.0,174,2,F
 841633,Peio,Dufau,Pyrénées-Atlantiques,6,Socialistes et apparentés,1000,175,0,M
 840135,Alexandre,Dufosset,Nord,18,Rassemblement National,952.0,176,1,M
 795200,Alma,Dufour,Seine-Maritime,4,La France insoumise - Nouveau Front Populaire,1046.0,177,3,F
@@ -213,7 +213,7 @@
 796070,Perceval,Gaillard,Réunion,7,La France insoumise - Nouveau Front Populaire,1000,213,0,M
 719736,Camille,Galliard-Minier,Isère,1,Ensemble pour la République,1000,214,0,F
 793892,Stéphanie,Galzy,Hérault,5,Rassemblement National,1064.0,215,5,F
-795010,Marie-Charlotte,Garin,Rhône,3,Écologiste et Social,1046.0,216,2,F
+795010,Marie-Charlotte,Garin,Rhône,3,Écologiste et Social,1113.0,216,3,F
 333285,Guillaume,Garot,Mayenne,1,Socialistes et apparentés,1000,217,0,M
 722358,Thomas,Gassilloud,Rhône,10,Ensemble pour la République,1000,218,0,M
 721024,Anne,Genetet,Français établis hors de France,11,Ensemble pour la République,1050.0,219,1,F
@@ -224,7 +224,7 @@
 793102,Christian,Girard,Alpes-de-Haute-Provence,1,Rassemblement National,1000,224,0,M
 841419,Damien,Girard,Morbihan,5,Écologiste et Social,1000,225,0,M
 718674,Olga,Givernet,Ain,3,Ensemble pour la République,950.0,226,1,F
-840939,Océane,Godard,Côte-d'Or,1,Socialistes et apparentés,1081.0,227,3,F
+840939,Océane,Godard,Côte-d'Or,1,Socialistes et apparentés,1111.0,227,4,F
 841539,Julien,Gokel,Nord,13,Socialistes et apparentés,1000,228,0,M
 841605,Antoine,Golliot,Pas-de-Calais,5,Rassemblement National,1000,229,0,M
 793362,José,Gonzalez,Bouches-du-Rhône,10,Rassemblement National,1000,230,0,M
@@ -233,10 +233,10 @@
 721296,Guillaume,Gouffier Valente,Val-de-Marne,6,Ensemble pour la République,1000,233,0,M
 794418,Florence,Goulet,Meuse,2,Rassemblement National,960.0,234,3,F
 720560,Perrine,Goulet,Nièvre,1,Les Démocrates,963.0,235,3,F
-793592,Géraldine,Grangier,Doubs,4,Rassemblement National,961.0,236,3,F
+793592,Géraldine,Grangier,Doubs,4,Rassemblement National,1022.0,236,4,F
 267318,Jean-Carles,Grelier,Sarthe,5,Les Démocrates,1047.0,237,2,M
 795540,Daniel,Grenon,Yonne,1,Non inscrit,1000,238,0,M
-840757,Monique,Griseti,Bouches-du-Rhône,1,Rassemblement National,995.0,239,2,F
+840757,Monique,Griseti,Bouches-du-Rhône,1,Rassemblement National,950.0,239,3,F
 794058,Justine,Gruet,Jura,3,Droite Républicaine,1003.0,240,2,F
 840171,Emmanuel,Grégoire,Paris,7,Socialistes et apparentés,1000,241,0,M
 721764,Olivia,Grégoire,Paris,12,Ensemble pour la République,1034.0,242,3,F
@@ -261,7 +261,7 @@
 840947,Catherine,Hervieu,Côte-d'Or,2,Écologiste et Social,945.0,261,1,F
 608416,Patrick,Hetzel,Bas-Rhin,7,Droite Républicaine,1000,262,0,M
 794082,Mathilde,Hignet,Ille-et-Vilaine,4,La France insoumise - Nouveau Front Populaire,1073.0,263,3,F
-841709,Emmanuelle,Hoffman,Paris,4,Ensemble pour la République,967.0,264,4,F
+841709,Emmanuelle,Hoffman,Paris,4,Ensemble pour la République,935.0,264,5,F
 1654,François,Hollande,Corrèze,1,Socialistes et apparentés,1000,265,0,M
 722150,Sacha,Houlié,Vienne,2,Socialistes et apparentés,1000,266,0,M
 793632,Timothée,Houssin,Eure,5,Rassemblement National,1000,267,0,M
@@ -280,12 +280,12 @@
 841075,Sylvie,Josserand,Gard,6,Rassemblement National,1030.0,280,3,F
 720038,Sandrine,Josso,Loire-Atlantique,7,Les Démocrates,1087.0,281,2,F
 840869,Florence,Joubert,Dordogne,3,Rassemblement National,1000,283,0,F
-643192,Chantal,Jourdan,Orne,1,Socialistes et apparentés,965.0,283,3,F
+643192,Chantal,Jourdan,Orne,1,Socialistes et apparentés,965.0,283,4,F
 346782,Philippe,Juvin,Hauts-de-Seine,3,Droite Républicaine,1048.0,284,1,M
 795998,Émeline,K/Bidi,Réunion,4,Gauche Démocrate et Républicaine,915.0,285,2,F
 335054,Marietta,Karamanli,Sarthe,2,Socialistes et apparentés,1000,286,0,F
 719372,Guillaume,Kasbarian,Eure-et-Loir,1,Ensemble pour la République,1000,287,0,M
-795156,Fatiha,Keloua Hachi,Seine-Saint-Denis,8,Socialistes et apparentés,1000,288,0,F
+795156,Fatiha,Keloua Hachi,Seine-Saint-Denis,8,Socialistes et apparentés,1047.0,288,1,F
 794130,Andy,Kerbrat,Loire-Atlantique,2,La France insoumise - Nouveau Front Populaire,1000,289,0,M
 719052,Loïc,Kervran,Cher,3,Horizons & Indépendants,1000,290,0,M
 643184,Brigitte,Klinkert,Haut-Rhin,1,Ensemble pour la République,914.0,291,2,F
@@ -304,19 +304,19 @@
 795912,Laure,Lavalette,Var,2,Rassemblement National,1000,304,0,F
 841837,Robert,Le Bourgeois,Seine-Maritime,10,Rassemblement National,1000,305,0,M
 841515,Aurélien,Le Coq,Nord,1,La France insoumise - Nouveau Front Populaire,1048.0,306,1,M
-719412,Sandrine,Le Feur,Finistère,4,Ensemble pour la République,1000,307,0,F
+719412,Sandrine,Le Feur,Finistère,4,Ensemble pour la République,1007.0,307,1,F
 840979,Corentin,Le Fur,Côtes-d'Armor,3,Droite Républicaine,1048.0,308,1,M
 719404,Didier,Le Gac,Finistère,3,Ensemble pour la République,1000,309,0,M
 795672,Arnaud,Le Gall,Val-d'Oise,9,La France insoumise - Nouveau Front Populaire,1000,310,0,M
 345722,Constance,Le Grip,Hauts-de-Seine,6,Ensemble pour la République,950.0,311,1,F
-794426,Anne,Le Hénanff,Morbihan,1,Horizons & Indépendants,996.0,312,2,F
+794426,Anne,Le Hénanff,Morbihan,1,Horizons & Indépendants,957.0,312,3,F
 719388,Annaïg,Le Meur,Finistère,1,Ensemble pour la République,1050.0,313,1,F
 719756,Christine,Le Nabour,Ille-et-Vilaine,5,Ensemble pour la République,1000,315,0,F
 720342,Nicole,Le Peih,Morbihan,3,Ensemble pour la République,928.0,315,2,F
 720614,Marine,Le Pen,Pas-de-Calais,11,Rassemblement National,1030.0,316,1,F
 721852,Marie,Lebec,Yvelines,4,Ensemble pour la République,1059.0,317,1,F
-774962,Karine,Lebon,Réunion,2,Gauche Démocrate et Républicaine,975.0,318,3,F
-795108,Élise,Leboucher,Sarthe,4,La France insoumise - Nouveau Front Populaire,970.0,319,4,F
+774962,Karine,Lebon,Réunion,2,Gauche Démocrate et Républicaine,983.0,318,5,F
+795108,Élise,Leboucher,Sarthe,4,La France insoumise - Nouveau Front Populaire,972.0,319,6,F
 795374,Pascal,Lecamp,Vienne,3,Les Démocrates,1000,320,0,M
 796026,Julie,Lechanteux,Var,5,Rassemblement National,1055.0,321,1,F
 840857,Nadine,Lechon,Dordogne,1,Rassemblement National,979.0,322,1,F
@@ -324,7 +324,7 @@
 712014,Vincent,Ledoux,Nord,10,Ensemble pour la République,1000,324,0,M
 795386,Mathieu,Lefèvre,Val-de-Marne,5,Ensemble pour la République,1000,325,0,M
 795298,Jérôme,Legavre,Seine-Saint-Denis,12,La France insoumise - Nouveau Front Populaire,1048.0,326,1,M
-791824,Sarah,Legrain,Paris,16,La France insoumise - Nouveau Front Populaire,1108.0,327,3,F
+791824,Sarah,Legrain,Paris,16,La France insoumise - Nouveau Front Populaire,1139.0,327,4,F
 842029,Claire,Lejeune,Essonne,7,La France insoumise - Nouveau Front Populaire,1050.0,328,1,F
 793290,Gisèle,Lelouis,Bouches-du-Rhône,3,Rassemblement National,990.0,329,1,F
 794838,Didier,Lemaire,Haut-Rhin,3,Horizons & Indépendants,1000,330,0,M
@@ -334,7 +334,7 @@
 793532,Murielle,Lepvraud,Côtes-d'Armor,4,La France insoumise - Nouveau Front Populaire,1007.0,334,2,F
 721134,Roland,Lescure,Français établis hors de France,1,Ensemble pour la République,1000,335,0,M
 774958,Gérard,Leseul,Seine-Maritime,5,Socialistes et apparentés,1000,336,0,M
-841601,Pauline,Levasseur,Pas-de-Calais,2,Ensemble pour la République,1080.0,337,2,F
+841601,Pauline,Levasseur,Pas-de-Calais,2,Ensemble pour la République,1013.0,337,3,F
 793608,Katiana,Levavasseur,Eure,2,Rassemblement National,1004.2829506073294,338,2,F
 840765,Laurent,Lhardit,Bouches-du-Rhône,2,Socialistes et apparentés,1000,339,0,M
 794750,Thierry,Liger,Orne,2,Droite Républicaine,1000,340,0,M
@@ -355,7 +355,7 @@
 717379,Sylvain,Maillard,Paris,1,Ensemble pour la République,1000,355,0,M
 796010,Frédéric,Maillot,Réunion,6,Gauche Démocrate et Républicaine,1000,356,0,M
 794114,Emmanuel,Mandon,Loire,3,Les Démocrates,1050.0,357,1,M
-841183,Hanane,Mansouri,Isère,8,Union des droites pour la République,1003.0,358,3,F
+841183,Hanane,Mansouri,Isère,8,Union des droites pour la République,1036.0,358,4,F
 841563,Claire,Marais-Beuil,Oise,1,Rassemblement National,906.0,359,2,F
 794530,Matthieu,Marchio,Nord,16,Rassemblement National,1048.0,360,1,M
 795730,Bastien,Marchive,Deux-Sèvres,1,Ensemble pour la République,1000,361,0,M
@@ -381,7 +381,7 @@
 841931,Laurent,Mazaury,Yvelines,11,"Libertés, Indépendants, Outre-mer et Territoires",951.5,381,1,M
 719436,Nicolas,Meizonnet,Gard,2,Rassemblement National,1000,382,0,M
 719338,Graziella,Melchior,Finistère,5,Ensemble pour la République,990.0,383,3,F
-720370,Ludovic,Mendes,Moselle,2,Ensemble pour la République,951.5,384,1,M
+720370,Ludovic,Mendes,Moselle,2,Ensemble pour la République,953.0,384,2,M
 841463,Estelle,Mercier,Meurthe-et-Moselle,1,Socialistes et apparentés,889.0,385,4,F
 841215,Marie,Mesmeur,Ille-et-Vilaine,1,La France insoumise - Nouveau Front Populaire,1000,386,0,F
 719640,Sophie,Mette,Gironde,9,Les Démocrates,941.0,387,4,F
@@ -398,11 +398,11 @@
 607619,Paul,Molac,Morbihan,4,"Libertés, Indépendants, Outre-mer et Territoires",1000,398,0,M
 793174,Yannick,Monnet,Allier,1,Gauche Démocrate et Républicaine,1000,399,0,M
 840915,Thibaut,Monnier,Drôme,4,Rassemblement National,1000,400,0,M
-794810,Louise,Morel,Bas-Rhin,6,Les Démocrates,1000,401,0,F
+794810,Louise,Morel,Bas-Rhin,6,Les Démocrates,952.0,401,1,F
 794466,Jean,Moulliere,Nord,6,Horizons & Indépendants,1000,402,0,M
 720908,Naïma,Moutchou,Val-d'Oise,4,Horizons & Indépendants,998.0,403,4,F
 793696,Serge,Muller,Dordogne,2,Rassemblement National,952.0,404,1,M
-793354,Joëlle,Mélin,Bouches-du-Rhône,9,Rassemblement National,954.0,405,1,F
+793354,Joëlle,Mélin,Bouches-du-Rhône,9,Rassemblement National,929.0,405,2,F
 795786,Yaël,Ménaché,Somme,5,Rassemblement National,997.0,406,3,F
 794322,Thomas,Ménagé,Loiret,4,Rassemblement National,952.0,407,1,M
 795820,Marcellin,Nadeau,Martinique,2,Gauche Démocrate et Républicaine,1000,408,0,M
@@ -417,7 +417,7 @@
 795722,Karl,Olive,Yvelines,12,Ensemble pour la République,1000,417,0,M
 794830,Hubert,Ott,Haut-Rhin,2,Les Démocrates,1000,418,0,M
 842045,Julie,Ozenne,Essonne,9,Écologiste et Social,1043.0,419,2,F
-793872,Nathalie,Oziol,Hérault,2,La France insoumise - Nouveau Front Populaire,1045.0,420,1,F
+793872,Nathalie,Oziol,Hérault,2,La France insoumise - Nouveau Front Populaire,1052.0,420,2,F
 720334,Jimmy,Pahun,Morbihan,2,Les Démocrates,1000,421,0,M
 793210,Laurent,Panifous,Ariège,2,"Libertés, Indépendants, Outre-mer et Territoires",1000,422,0,M
 719632,Sophie,Panonacle,Gironde,8,Ensemble pour la République,952.0,423,1,F
@@ -455,7 +455,7 @@
 719578,Loïc,Prud'homme,Gironde,3,La France insoumise - Nouveau Front Populaire,1000,455,0,M
 795966,Stéphane,Rambaud,Var,3,Rassemblement National,1000,456,0,M
 720092,Richard,Ramos,Loiret,6,Les Démocrates,951.5,457,1,M
-793230,Angélique,Ranc,Aube,3,Rassemblement National,1057.0,458,1,F
+793230,Angélique,Ranc,Aube,3,Rassemblement National,1086.0,458,2,F
 793254,Julien,Rancoule,Aude,3,Rassemblement National,1000,459,0,M
 721062,Jean-Hugues,Ratenon,Réunion,5,La France insoumise - Nouveau Front Populaire,1000,460,0,M
 720552,Isabelle,Rauch,Moselle,9,Horizons & Indépendants,1000,462,0,F
@@ -464,14 +464,14 @@
 794778,Sandra,Regol,Bas-Rhin,1,Écologiste et Social,1090.0,464,2,F
 795240,Mereana,Reid Arbelot,Polynésie Française,3,Gauche Démocrate et Républicaine,1000,465,0,F
 841955,Matthias,Renault,Somme,3,Rassemblement National,1000,466,0,M
-840657,Sophie,Ricourt Vaginay,Alpes-de-Haute-Provence,2,Union des droites pour la République,1000,467,0,F
+840657,Sophie,Ricourt Vaginay,Alpes-de-Haute-Provence,2,Union des droites pour la République,952.0,467,1,F
 335758,Franck,Riester,Seine-et-Marne,5,Ensemble pour la République,1000,468,0,M
 795876,Davy,Rimane,Guyane,2,Gauche Démocrate et Républicaine,1000,469,0,M
 841981,Catherine,Rimbert,Vaucluse,5,Rassemblement National,996.0,470,2,F
 721426,Véronique,Riotton,Haute-Savoie,1,Ensemble pour la République,952.0,471,1,F
 720066,Stéphanie,Rist,Loiret,1,Ensemble pour la République,1000,472,0,F
 842227,Joseph,Rivière,Réunion,3,Rassemblement National,1000,473,0,M
-722252,Marie-Pierre,Rixain,Essonne,4,Ensemble pour la République,1000.0,474,2,F
+722252,Marie-Pierre,Rixain,Essonne,4,Ensemble pour la République,1033.0,474,3,F
 794442,Laurence,Robert-Dehault,Haute-Marne,2,Rassemblement National,956.0,475,3,F
 795528,Charles,Rodwell,Yvelines,1,Ensemble pour la République,1000,476,0,M
 266808,Vincent,Rolland,Savoie,2,Droite Républicaine,1000,477,0,M
@@ -486,7 +486,7 @@
 841327,Fabrice,Roussel,Loire-Atlantique,5,Socialistes et apparentés,1000,486,0,M
 795888,Marie-Ange,Rousselot,Français établis hors de France,6,Ensemble pour la République,1064.0,487,2,F
 793270,Jean-François,Rousset,Aveyron,3,Ensemble pour la République,1000,488,0,M
-842097,Sophie-Laurence,Roy,Yonne,2,Rassemblement National,988.0,489,3,F
+842097,Sophie-Laurence,Roy,Yonne,2,Rassemblement National,956.0,489,4,F
 722142,François,Ruffin,Somme,1,Écologiste et Social,1000,490,0,M
 841717,Sandrine,Runel,Rhône,4,Socialistes et apparentés,1000,491,0,F
 341981,Marie,Récalde,Gironde,6,Socialistes et apparentés,1073.0,492,3,F
@@ -508,7 +508,7 @@
 757225,Mikaele,Seo,Wallis-et-Futuna,1,Ensemble pour la République,1000,508,0,M
 793416,Freddy,Sertin,Calvados,6,Ensemble pour la République,952.0,509,1,M
 720960,Olivier,Serva,Guadeloupe,1,"Libertés, Indépendants, Outre-mer et Territoires",1000,510,0,M
-842255,Anne,Sicard,Val-d'Oise,1,Rassemblement National,1007.0,511,2,F
+842255,Anne,Sicard,Val-d'Oise,1,Rassemblement National,1043.0,511,3,F
 841091,Arnaud,Simion,Haute-Garonne,6,Socialistes et apparentés,1000,512,0,M
 796018,Danielle,Simonnet,Paris,15,Écologiste et Social,1012.0,513,3,F
 794802,Charles,Sitzenstuhl,Bas-Rhin,5,Ensemble pour la République,1000,514,0,M
@@ -525,7 +525,7 @@
 719550,Liliana,Tanguy,Finistère,7,Ensemble pour la République,1000,525,0,M
 795778,Jean-Philippe,Tanguy,Somme,4,Rassemblement National,1000,526,0,M
 793796,David,Taupiac,Gers,2,"Libertés, Indépendants, Outre-mer et Territoires",1000,527,0,M
-794106,Andrée,Taurinya,Loire,2,La France insoumise - Nouveau Front Populaire,991.0,528,2,F
+794106,Andrée,Taurinya,Loire,2,La France insoumise - Nouveau Front Populaire,928.0,528,4,F
 794166,Matthias,Tavel,Loire-Atlantique,8,La France insoumise - Nouveau Front Populaire,1000,529,0,M
 794502,Michaël,Taverne,Nord,12,Rassemblement National,1000,530,0,M
 841713,Boris,Tavernier,Rhône,2,Écologiste et Social,1048.0,531,1,M
@@ -533,7 +533,7 @@
 841553,Thierry,Tesson,Nord,17,Rassemblement National,1000,533,0,M
 795920,Prisca,Thevenot,Hauts-de-Seine,8,Ensemble pour la République,1000,534,0,F
 793948,Nicolas,Thierry,Gironde,2,Écologiste et Social,1000,535,0,M
-719822,Sabine,Thillaye,Indre-et-Loire,5,Les Démocrates,985.0,536,3,F
+719822,Sabine,Thillaye,Indre-et-Loire,5,Les Démocrates,1028.0,536,4,F
 841893,Céline,Thiébault-Martinez,Seine-et-Marne,9,Socialistes et apparentés,1052.0,537,1,F
 722336,Vincent,Thiébaut,Bas-Rhin,9,Horizons & Indépendants,1000,538,0,M
 643089,Jean-Louis,Thiériot,Seine-et-Marne,3,Droite Républicaine,1000,539,0,M
@@ -567,7 +567,7 @@
 720992,Jiovanny,William,Martinique,1,Socialistes et apparentés,1000,567,0,M
 2960,Éric,Woerth,Oise,4,Ensemble pour la République,1000,568,0,M
 795046,Caroline,Yadan,Français établis hors de France,8,Ensemble pour la République,996.0,569,2,F
-796078,Estelle,Youssouffa,Mayotte,1,"Libertés, Indépendants, Outre-mer et Territoires",973.0,570,3,F
+796078,Estelle,Youssouffa,Mayotte,1,"Libertés, Indépendants, Outre-mer et Territoires",989.0,570,4,F
 942,Charles,de Courson,Marne,5,"Libertés, Indépendants, Outre-mer et Territoires",1000,571,0,M
 841613,Marc,de Fleurian,Pas-de-Calais,7,Rassemblement National,1000,572,0,M
 642988,Hervé,de Lépinau,Vaucluse,3,Rassemblement National,1000,573,0,M
