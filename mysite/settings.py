@@ -17,7 +17,7 @@ import os
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
+        default="sqlite:///db.sqlite3",
         conn_max_age=600
     )
 }
@@ -38,6 +38,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Wow, nothing
 SECRET_KEY = 'django-insecure-h@(p^+aupyqyf9=%j+w6+r4kr%zt9gl^^18swmptqc0x8rrj-d'
 
 CSRF_TRUSTED_ORIGINS = [
@@ -49,6 +50,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '192.168.1.65', '192.168.1.81', '127.0.0.1', '105.155.41.35', 'smashorpassthebill.up.railway.app']
 
+# Lo and Behold - Cybersecurity :
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # or your email provider
 EMAIL_PORT = 587
@@ -99,17 +101,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
